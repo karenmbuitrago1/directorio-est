@@ -1,0 +1,839 @@
+<div class="toolBar" id="toolBar">
+    <div class="toolBar__container">
+        <div class="toolBar__container__panel">
+            <div class="toolBar__container__panel__icons">
+                <ul class="toolBar__container__panel__icons__list">
+                    <li class="toolBar__container__panel__icons__list__item --principal">
+                        <button class="toolBar__container__buttons__list__item__btn" name="Ayuda" title="Ayuda" id="PanelBtn__help">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__ask"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Ayuda</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item --principal">
+                        <button class="toolBar__container__buttons__list__item__btn" name="Ubicación" title="Ubicación" id="PanelBtn__location">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__searchGeo"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Ubicación</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item --principal">
+                        <button class="toolBar__container__buttons__list__item__btn --active" name="Temas" title="Temas" id="PanelBtn__filter">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__searchTheme"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Temas</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item --principal">
+                        <button class="toolBar__container__buttons__list__item__btn" name="Herramientas" title="Herramientas" id="PanelBtn__settings">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__settings"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Herramientas</p>
+                        </button>
+                    </li>
+    
+                    
+                </ul>
+            </div>
+            <div class="toolBar__container__buttons">
+                <ul id="toolBar__container__buttons__list" class="toolBar__container__buttons__list">
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" name="Descarga" title="Descarga del mapa" id="PanelBtn__downloadMap">
+                            <a rel="noreferrer" href="https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/?cod=7" target="_blank" class="toolBar__container__buttons__list__item__btn__link" itemprop="url" title="página de descarga">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__download"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Descargar</p>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="PanelBtn__screenShot" name="Captura" title="Captura de pantalla">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__camera"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Captura</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="toolBar__btnBaseMap" name="Mapa Base" title="Mapa base">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__baseMap"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Mapa Base</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="toolBar__btnMeasure" name="Medida" title="Tipo de medida en el mapa">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__measure"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Medida</p>
+                        </button>
+                    </li>
+                    <!-- <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="toolBar__btnLayers" name="Capas" title="Ver capas">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__layers"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Capas</p>
+                        </button>
+                    </li> -->
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="toolBar__btnTable" name="Tabla" title="Tabla de datos">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__table"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Tabla</p>
+                        </button>
+                    </li>
+                    <li class="toolBar__container__panel__icons__list__item">
+                        <button class="toolBar__container__buttons__list__item__btn" id="toolBar__btnPalette" name="Personalizar" title="Personalizar color">
+                            <div class="toolBar__container__buttons__list__item__btn__icon">
+                                <span class="DANE__Geovisor__icon__palette"></span>
+                            </div>
+                            <p class="toolBar__container__buttons__list__item__btn__name">Personalizar</p>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionLocation">
+                <div class="functionFilter__accordion">
+                    <!-- <button class="functionFilter__accordion__btn  --active">
+                        <div class="functionFilter__accordion__btn__icon">
+                            <span class="DANE__Geovisor__icon__world"></span>
+                        </div>
+                        <p class="functionFilter__accordion__btn__name">Filtrar por niveles geográficos</p>
+                    </button> -->
+                    <div class="functionFilter__accordion__panel --open">
+                        <div class="functionFilter__accordion__panel__filters">
+                            <div class="functionFilter__accordion__panel__filters__selectBox">
+                                <select class="functionFilter__accordion__panel__filters__select" id="FiltroGeograficoLvl1">
+                                </select>
+                            </div>
+                            <div class="functionFilter__accordion__panel__filters__selectBox --invisible">
+                                <select class="functionFilter__accordion__panel__filters__select" id="FiltroGeograficoLvl2">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="functionFilter__accordion__nota">
+                        <p class="functionFilter__accordion__nota__name">Nota: Filtre hasta un municipio para ver las empresas georreferenciadas</p>
+                    </div>
+
+                    <!-- <button class="functionFilter__accordion__btn  --active">
+                        <div class="functionFilter__accordion__btn__icon">
+                            <span class="DANE__Geovisor__icon__List"></span>
+                        </div>
+                        <p class="functionFilter__accordion__btn__name">Total Directorio de Empresas</p>
+                    </button>
+                    <div class="functionFilter__accordion__panel --open">
+                        <div class="functionFilter__accordion__panel__filters">
+                            <div class="functionFilter__accordion__panel__filters__selectBox">
+                                    <select class="functionFilter__accordion__panel__filters__select" id="FiltroTotalLvl1">
+                                        <option value="05801002">CIIU4</option>
+                                        <option value="05801001">CIIU3</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>              -->                    
+                    <!-- <button class="functionFilter__accordion__btn --active">
+                        <div class="functionFilter__accordion__btn__icon">
+                            <span class="DANE__Geovisor__icon__area"></span>
+                        </div>
+                        <p class="functionFilter__accordion__btn__name">Filtrar por área (Clase)</p>
+                    </button>
+                    <div class="functionFilter__accordion__panel --open">
+                        <ul class="toolBar__container__panel__functionBox__radioList">
+                            <li class="toolBar__container__panel__functionBox__radioList__item --areaTotal --active">
+                                <input type="radio" name="areaTotal" value="areaTotal" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                <p class="toolBar__container__panel__functionBox__radioList__item__text">Total</p>
+                            </li>
+                            <li class="toolBar__container__panel__functionBox__radioList__item --cabecera">
+                                <input type="radio" name="cabecera" value="cabecera" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                <p class="toolBar__container__panel__functionBox__radioList__item__text">Cabecera Municipal</p>
+                            </li>
+                            <<li class="toolBar__container__panel__functionBox__radioList__item --centroPoblado">
+                                <input type="radio" name="centroPoblado" value="centroPoblado" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                <p class="toolBar__container__panel__functionBox__radioList__item__text">Centro poblado</p>
+                            </li>
+                            <li class="toolBar__container__panel__functionBox__radioList__item --ruralDisperso">
+                                <input type="radio" name="ruralDisperso" value="ruralDisperso" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                <p class="toolBar__container__panel__functionBox__radioList__item__text">Rural Disperso</p>
+                            </li>
+                        </ul>
+                    </div> 
+                    <button class="functionFilter__accordion__btn --active">
+                        <div class="functionFilter__accordion__btn__icon">
+                            <span class="DANE__Geovisor__icon__clock"></span>
+                        </div>
+                        <p class="functionFilter__accordion__btn__name">Filtrar por periodo de tiempo</p>
+                    </button>
+                    <div class="functionFilter__accordion__panel --open">
+                        <div class="functionFilter__accordion__panel__filters__selectBox">
+                            <select class="functionFilter__accordion__panel__filters__select" id="tiempoAnual">
+                                <option value="2016" class="functionFilter__accordion__panel__filters__option">2016</option>
+                            </select>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="functionFilter__description">
+                    <div class="functionFilter__description__icon">
+                        <span class="DANE__Geovisor__icon__note"></span>
+                    </div>
+                    <h5 class="functionFilter__description__title"></h5>
+                    <p class="functionFilter__description__text"></p>
+                </div>
+            </div>
+
+            <div class="toolBar__container__panel__functionBox functionFilter --visible">
+                <div class="functionFilter__accordion">     
+                    <!-- <button class="functionFilter__accordion__btn --active --tematico">
+                        <div class="functionFilter__accordion__btn__icon">
+                            <span class="DANE__Geovisor__icon__List"></span>
+                        </div>
+                        <p class="functionFilter__accordion__btn__name">Empresas por Actividad Económica - CIIU 4</p>
+                    </button> -->
+                    <div class="functionFilter__title">
+                        <p class="functionFilter__title__name">Consulte por temas las Empresas por Actividad Económica - CIIU 4</p>
+                    </div>
+                    
+                    <div class="functionFilter__accordion__panel --open --filtros">                       
+                        <div class="functionFilter__thematicGroup">
+                            <ul class="functionFilter__thematicGroup__list"></ul>
+                            <div class="functionFilter__thematicGroup__more --invisible">
+                                <div class="functionFilter__thematicGroup__moreIcon">
+                                    <span class="functionFilter__thematicGroup__moreLine"></span>
+                                    <span class="functionFilter__thematicGroup__moreLine"></span>
+                                    <span class="functionFilter__thematicGroup__moreLine"></span>
+                                </div>
+                                <p class="functionFilter__thematicGroup__moreText --seemore">Ver más</p>
+                                <p class="functionFilter__thematicGroup__moreText --back">Volver</p>
+                            </div>
+                            <div class="searchBox"><div class="searchBox__container">
+                                <input placeholder="Escriba una palabra clave" autocomplete="on" class="searchBox__input" id="searchBox__input">
+                                <button class="searchBox__btn" name="Buscar" title="Búsqueda temática" id="searchBox__btn"><span class="DANE__Geovisor__icon__search"></span></button>
+                                <div class="searchBox__eraseSearch"></div><p class="searchBox__errorMessage">No se encontro información</p></div>                           
+                            </div>
+                            <div class="functionFilter__thematic">
+                                <ul class="functionFilter__thematic__list"></ul>
+                            </div>
+                        </div>
+
+
+                        <div class="functionFilter__container__selectListbox --tabTemas">
+                            <ul class="functionFilter__container__selectListbox__selectList --tematicas">
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="functionFilter__description">
+                    <div class="functionFilter__description__icon">
+                        <span class="DANE__Geovisor__icon__note"></span>
+                    </div>
+                    <h5 class="functionFilter__description__title"></h5>
+                    <p class="functionFilter__description__text"></p>
+                </div>
+            </div>
+
+            <div class="toolBar__container__panel__functionBox functionBaseMap">
+                <h3 class="toolBar__container__panel__functionBox__title">Mapa base</h3>
+                <p class="toolBar__container__panel__functionBox__textInfo">Selecciona el mapa que deseas ver</p>
+                <ul class="toolBar__container__panel__functionBox__BaseMapList">
+                    <li class="toolBar__container__panel__functionBox__BaseMapList__item --invisible">
+                        <button class="toolBar__container__panel__functionBox__BaseMapList__item__btn" id="">
+                            <div class="toolBar__container__panel__functionBox__BaseMapList__item__btn__imageBox">
+                                <img src="" alt="" title="" class="toolBar__container__panel__functionBox__BaseMapList__item__btn__imageBox__image" />
+                            </div>
+                            <p class="toolBar__container__panel__functionBox__BaseMapList__item__btn__name"></p>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionMeasure ">
+                <h3 class="toolBar__container__panel__functionBox__title">Calcular Medida</h3>
+                <div class="toolBar__container__panel__functionBox__step --active" id="measure__step01">
+                    <h4 class="toolBar__container__panel__functionBox__step__title">Paso 1</h4>
+                    <ul class="toolBar__container__panel__functionBox__step__btnList">
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__Distance">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__route"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Distancia</p>
+                            </button>
+                        </li>
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__area">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__area"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Área</p>
+                            </button>
+                        </li>
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__draw">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__draw"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Dibujar</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="toolBar__container__panel__functionBox__step" id="measure__step02">
+                    <h4 class="toolBar__container__panel__functionBox__step__title">Paso 2</h4>
+                    <ul class="toolBar__container__panel__functionBox__step__btnList">
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item" id="Measure__item__button__line">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__line">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__drawLine"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Línea</p>
+                            </button>
+                        </li>
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item" id="Measure__item__button__square">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__square">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__drawSquare"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Cuadrado</p>
+                            </button>
+                        </li>
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item" id="Measure__item__button__polygon">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__polygon">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__drawPolygon"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Polígono</p>
+                            </button>
+                        </li>
+                        <li class="toolBar__container__panel__functionBox__step__btnList__item" id="Measure__item__button__circle">
+                            <button class="toolBar__container__panel__functionBox__step__btnList__item__button" id="Measure__button__circle">
+                                <div class="toolBar__container__panel__functionBox__step__btnList__item__button__icon">
+                                    <span class="DANE__Geovisor__icon__drawCircle"></span>
+                                </div>
+                                <p class="toolBar__container__panel__functionBox__step__btnList__item__button__name">Circulo</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="toolBar__container__panel__functionBox__step" id="measure__step03">
+                    <h4 class="toolBar__container__panel__functionBox__step__title">Resultado</h4>
+                    <p class="toolBar__container__panel__functionBox__text">La medida es:</p>
+                    <p class="toolBar__container__panel__functionBox__textMeasureValue">0</p>
+                    <button class="toolBar__container__panel__function__btn --erase" id="Measure__erase">
+                        <div class="toolBar__container__panel__function__btn__icon">
+                            <span class="DANE__Geovisor__icon__erase"></span>
+                        </div>
+                        <p class="toolBar__container__panel__function__btn__erase">Borrar figura</p>
+                    </button>
+                </div>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionSlides">
+                <h3 class="toolBar__container__panel__functionBox__title">Capas de referencia</h3>
+                <ul class="toolBar__container__panel__functionBox__checkList ">
+                    <li class="toolBar__container__panel__functionBox__checkList__item --ResguardosIndigenas">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="ResguardosIndigenas" value="ResguardosIndigenas" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Resguardos indigenas</p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text">Fuente Portal de Datos Abiertos de la ANT (<a href="http://data-agenciadetierras.opendata.arcgis.com/" target="_blank" class="toolBar__container__panel__functionBox__checkList__item__source__link">http://data-agenciadetierras.opendata.arcgis.com/</a>)</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --Parques">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="Parques" value="Parques" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Parques Nacionales Naturales</p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text"> Fuente Parques Nacionales Naturales de Colombia. Registro Único Nacional de áreas protegidas (<a href="https://mapas.parquesnacionales.gov.co/" target="_blank" class="toolBar__container__panel__functionBox__checkList__item__source__link">https://mapas.parquesnacionales.gov.co/</a>)</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --ConsejosComunitariosNegros">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="ConsejosComunitariosNegros" value="ConsejosComunitariosNegros" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Consejos Comunitarios Negros</p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text">Consejos Comunitarios Negros Fuente Portal de Datos Abiertos de la ANT (<a href="http://data-agenciadetierras.opendata.arcgis.com/)" target="_blank" class="toolBar__container__panel__functionBox__checkList__item__source__link">http://data-agenciadetierras.opendata.arcgis.com/</a>)</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --ZonasDeReservaCampesina">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="ZonasDeReservaCampesina" value="ZonasDeReservaCampesina" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Zonas de reserva Campesina</p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text">Fuente Portal de Datos Abiertos de la ANT (<a href="http://data-agenciadetierras.opendata.arcgis.com/" target="_blank" class="toolBar__container__panel__functionBox__checkList__item__source__link">http://data-agenciadetierras.opendata.arcgis.com/</a>)</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --Veredas">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="uploadLayer" value="uploadLayer" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Nivel de referencia de Veredas </p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text">Fuente Cartografía colaborativa DANE y otras entidades (<a href="https://geoportal.dane.gov.co/?descarga-nivel-referencia-veredas" target="_blank" class="toolBar__container__panel__functionBox__checkList__item__source__link">https://geoportal.dane.gov.co/?descarga-nivel-referencia-veredas</a>)</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --puntosEncuestas">
+                        <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                            <input type="checkbox" name="puntosEncuestas" value="puntosEncuestas" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__Square"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Unidades Georreferenciadas</p>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                        <div class="toolBar__container__panel__functionBox__checkList__item__source">
+                            <p class="toolBar__container__panel__functionBox__checkList__item__source__text">Fuente: DANE</p>
+                        </div>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__checkList__item --uploadLayer">
+                            <div class="toolBar__container__panel__functionBox__checkList__item__container">
+                                <input type="checkbox" name="uploadLayer" value="uploadLayer" class="toolBar__container__panel__functionBox__checkList__item__check"></input>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__checkSquare"></div>
+                            <p class="toolBar__container__panel__functionBox__checkList__item__text">Nombre de la capa cargada</p>
+                            <div class="toolBar__container__panel__functionBox__checkList__item__deleteLayer">
+                                <span class="DANE__Geovisor__icon__trash"></span>
+                            </div>
+                        </div>
+                        <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans">
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">0%</p>
+                            <div class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar">
+                                <button class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn"></button>
+                            </div>
+                            <p class="toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue">100%</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionUpload">
+                <h3 class="toolBar__container__panel__functionBox__title">Cargar</h3>
+                <ul class="toolBar__container__panel__functionBox__uploadType">
+                    <li class="toolBar__container__panel__functionBox__uploadType__item --active" id="kml">
+                        <p class="toolBar__container__panel__functionBox__uploadType__item__name">.KML / .KMZ</p>
+                    </li>
+                    <li class="toolBar__container__panel__functionBox__uploadType__item " id="wms">
+                        <p class="toolBar__container__panel__functionBox__uploadType__item__name">WMS</p>
+                    </li>
+                </ul>
+                <div class="toolBar__container__panel__functionBox__uploadType__type --visible" id="--KML">
+                    <div class="toolBar__container__panel__functionBox__uploadType__type__upload">
+                        <input type="file" name="Cargar archivo .KML / .KMZ" accept=".kml, .kmz" title="Cargar archivo .KML / .KMZ" class="toolBar__container__panel__functionBox__uploadType__type__upload__selectFile"/>
+                        <label for="file" class="toolBar__container__panel__functionBox__uploadType__type__upload__name">Seleccionar archivo .KML / .KMZ</label>
+                    </div>
+                    <button class="toolBar__container__panel__functionBox__uploadType__type__seeLayer">
+                        <div class="toolBar__container__panel__functionBox__uploadType__type__seeLayer__icon">
+                            <span class="DANE__Geovisor__icon__layers"></span>
+                        </div>
+                        <p class="toolBar__container__panel__functionBox__uploadType__type__seeLayer__name">Ver capa cargada</p>
+                    </button>
+                </div>
+                <div class="toolBar__container__panel__functionBox__uploadType__type" id="--VMS">
+                    <p class="toolBar__container__panel__functionBox__textLabel">Ingresa el enlace WMS </p>
+                    <input type="text" name="Enlace WMS" placeholder="http://www.enlacewms.com/" class="toolBar__container__panel__functionBox__textInput --enlaceWMS"/>
+                    <p class="toolBar__container__panel__functionBox__textLabel">Ingresa el nombre</p>
+                    <input type="text" name="Enlace WMS" placeholder="Nombre WMS" class="toolBar__container__panel__functionBox__textInput --nombreCapaWMS"/>
+                    <button class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn" id="uploadBtn__Link">
+                        <div class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__icon">
+                            <span class="DANE__Geovisor__icon__upload"></span>
+                        </div>
+                        <p class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__name">Cargar enlace</p>
+                    </button>
+                    <button class="toolBar__container__panel__functionBox__uploadType__type__seeLayer">
+                        <div class="toolBar__container__panel__functionBox__uploadType__type__seeLayer__icon">
+                            <span class="DANE__Geovisor__icon__layers"></span>
+                        </div>
+                        <p class="toolBar__container__panel__functionBox__uploadType__type__seeLayer__name">Ver capa cargada</p>
+                    </button>
+                </div>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionAnalysis">
+                <h3 class="toolBar__container__panel__functionBox__title">Realizar análisis</h3>
+                <div class="functionAnalysis__StepContainer">
+                    <div class="functionAnalysis__StepContainer__step functionAnalysis__step01">
+                        <h4 class="toolBar__container__panel__functionBox__step__title">Paso 1</h4>
+                        <p class="toolBar__container__panel__functionBox__step__text">Selecciona el tipo de análisis que deseas hacer</p>
+                        <ul class="functionAnalysis__StepContainer__step__btnList">
+                            <li class="functionAnalysis__StepContainer__step__btnList__item">
+                                <button class="functionAnalysis__StepContainer__btn functionAnalysis__location" id="functionAnalysis__location">
+                                    <div class="functionAnalysis__StepContainer__btn__icon">
+                                        <span class="DANE__Geovisor__icon__location"></span>
+                                    </div>
+                                    <p class="functionAnalysis__StepContainer__btn__name">Análisis por área</p>
+                                </button>
+                            </li>
+                            <li class="functionAnalysis__StepContainer__step__btnList__item">
+                                <button class="functionAnalysis__StepContainer__btn functionAnalysis__heatmap" id="functionAnalysis__heatmap">
+                                    <div class="functionAnalysis__StepContainer__btn__icon">
+                                        <span class="DANE__Geovisor__icon__graphBalls"></span>
+                                    </div>
+                                    <p class="functionAnalysis__StepContainer__btn__name">Mapa de calor</p>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="functionAnalysis__StepContainer__step functionAnalysis__step02 --invisible">
+                        <h4 class="toolBar__container__panel__functionBox__step__title">Paso 2</h4>
+                        <p class="toolBar__container__panel__functionBox__step__text">Ingrese un lugar</p>
+                        <div class="functionAnalysis__boxDescription">
+                            <div class="functionAnalysis__boxDescription__icon">
+                                <span class="DANE__Geovisor__icon__location"></span>
+                            </div>
+                            <p class="functionAnalysis__boxDescription__text">En el mapa está viendo un marcador, arrástrelo hasta el lugar de su interés.</p>
+                        </div>
+                        <div class="functionAnalysis__SearchBox">
+                            <input placeholder="Escribe una ubicación" class="functionAnalysis__SearchBox__input" id="functionAnalysis__btnFiltrar"/>
+                            <button class="functionAnalysis__SearchBox__btn" id="functionAnalysis__SearchBox__btn">
+                                <span class="DANE__Geovisor__icon__search"></span>
+                            </button>
+                            <div class="functionAnalysis__SearchBox__eraseSearch"></div>
+                            <p class="functionAnalysis__SearchBox__errorMessage">Debes ingresar una ubicación</p>
+                        </div>
+                    </div>
+                    <div class="functionAnalysis__StepContainer__step functionAnalysis__step03 --invisible">
+                        <h4 class="toolBar__container__panel__functionBox__step__title">Paso 3</h4>
+                        <p class="toolBar__container__panel__functionBox__step__text --map">Seleccione el área</p>
+                        <div class="functionAnalysis__boxDescription">
+                            <p class="functionAnalysis__boxDescription__text --full --map">Seleccione el método para obtener la información:</p>
+                            <ul class="toolBar__container__panel__functionBox__radioList">
+                                <li class="toolBar__container__panel__functionBox__radioList__item --AnalysisHouseConcentration --full">
+                                    <input type="radio" name="AnalysisHouseConcentration" value="AnalysisHouseConcentration" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                    <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                    <p class="toolBar__container__panel__functionBox__radioList__item__text">Densidad de <span class="functionAnalysis__slideTrans__textValue__legend">unidades</span></p>
+                                </li>
+                                <li class="toolBar__container__panel__functionBox__radioList__item --AnalysisArea --full">
+                                    <input type="radio" name="AnalysisArea" value="AnalysisArea" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                    <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                    <p class="toolBar__container__panel__functionBox__radioList__item__text">Área alrededor de la ubicación</p>
+                                </li>
+                                <li class="toolBar__container__panel__functionBox__radioList__item --AnalysisDrawArea --full">
+                                    <input type="radio" name="AnalysisDrawArea" value="AnalysisDrawArea" class="toolBar__container__panel__functionBox__radioList__item__radio"></input>
+                                    <div class="toolBar__container__panel__functionBox__radioList__item__radioBox"></div>
+                                    <p class="toolBar__container__panel__functionBox__radioList__item__text"> Dibujar un área</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="functionAnalysis__list">
+                            <li class="functionAnalysis__list__option --option01 --invisible">
+                                <div class="functionAnalysis__boxDescription">
+                                    <p class="functionAnalysis__boxDescription__text --full">Cambie el tamaño del círculo de búsqueda para definir el <span class="functionAnalysis__boxDescription__text__bold">área</span></p>
+                                </div>
+                                <div class="functionAnalysis__slideTrans">
+                                    <p class="functionAnalysis__slideTrans__textValue">100 metros</p>
+                                    <div class="functionAnalysis__slideTrans__scrollBar">
+                                        <button class="functionAnalysis__slideTrans__scrollBtn analysis"></button>
+                                    </div>
+                                    <p class="functionAnalysis__slideTrans__textValue">20.000 metros</p>
+                                </div>
+                                <button class="functionAnalysis__btn">
+                                    <div class="functionAnalysis__btn__icon">
+                                        <span class="DANE__Geovisor__icon__chartAnalysis"></span>
+                                    </div>
+                                    <p class="functionAnalysis__btn__name">Calcular</p>
+                                </button>
+                            </li>
+                            <li class="functionAnalysis__list__option --option02 --invisible">
+                                <div class="functionAnalysis__boxDescription">
+                                    <p class="functionAnalysis__boxDescription__text --full">Clic en cualquier parte del mapa para ir dibujando el polígono, cierre el polígono dando clic en el punto inicial.</p>
+                                </div>
+                                <button class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn" id="close_polygon">
+                                    <div class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__icon">
+                                        <span class="DANE__Geovisor__icon__closePolygon"></span>
+                                    </div>
+                                    <p class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__name">Cerrar poligono</p>
+                                </button>
+                                <button class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn" id="delete_polygon">
+                                    <div class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__icon">
+                                        <span class="DANE__Geovisor__icon__erase"></span>
+                                    </div>
+                                    <p class="toolBar__container__panel__functionBox__uploadType__type__uploadbtn__name">Borrar poligono</p>
+                                </button>
+                                <button class="functionAnalysis__btn">
+                                    <div class="functionAnalysis__btn__icon">
+                                        <span class="DANE__Geovisor__icon__chartAnalysis"></span>
+                                    </div>
+                                    <p class="functionAnalysis__btn__name">Calcular</p>
+                                </button>
+                            </li>
+                            <li class="functionAnalysis__list__option --option03 --invisible">
+                                <div class="functionAnalysis__boxDescription">
+                                    <p class="functionAnalysis__boxDescription__text --full">Cambie el tamaño del círculo de búsqueda para definir la <span class="functionAnalysis__boxDescription__text__bold">densidad de <span class="functionAnalysis__slideTrans__textValue__legend">unidades</span></span></p>
+                                </div>
+                                <div class="functionAnalysis__slideTrans">
+                                    <p class="functionAnalysis__slideTrans__textValue">10 <span class="functionAnalysis__slideTrans__textValue__legend">unidades</span></p>
+                                    <div class="functionAnalysis__slideTrans__scrollBar">
+                                        <button class="functionAnalysis__slideTrans__scrollBtn heatMap"></button>
+                                    </div>
+                                    <p class="functionAnalysis__slideTrans__textValue">5.000 <span class="functionAnalysis__slideTrans__textValue__legend">unidades</span></p>
+                                </div>
+                                <button class="functionAnalysis__btn_heatMap">
+                                    <div class="functionAnalysis__btn__icon">
+                                        <span class="DANE__Geovisor__icon__chartAnalysis"></span>
+                                    </div>
+                                    <p class="functionAnalysis__btn__name">Calcular</p>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="toolBar__container__panel__functionBox function3D">
+                <h3 class="toolBar__container__panel__functionBox__title">vista 3D</h3>
+                <div class="function3D__container">
+                    <div class="function3D__container__switch">
+                        <p class="function3D__container__text">Activa la vista</p>
+                        <div class="function3D__container__switch__content">
+                            <p class="function3D__container__switch__content__text">2D</p>
+                            <label class="function3D__container__switch__contentSwitch">
+                                <input type="checkbox" checked class="function3D__container__switch__content__input">
+                                <span class="function3D__container__switch__content__slider"></span>
+                            </label>
+                            <p class="function3D__container__switch__content__text">3D</p>
+                        </div>
+                    </div>
+                    <div class="function3D__container__switch">
+                        <p class="function3D__container__text">Variable para la vista 3D</p>
+                        <div class="function3D__container__switch__content">
+                            <div class="function3D__container__switch__content__selectBox">
+                                <select class="function3D__container__switch__content__select" id="variable3D">
+                                    <option class="function3D__container__switch__content__option">Población total</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="toolBar__container__panel__functionBox functionPalette">
+                <h3 class="toolBar__container__panel__functionBox__title">Personalizar</h3>
+                <div class="functionPalette__container">
+                    <div class="functionPalette__container__switch" id="vistacolor">
+                        <p class="function3D__container__text">Activa la vista</p>
+                        <div class="functionPalette__container__switch__content">
+                            <p class="functionPalette__container__switch__content__text">Oscura</p>
+                            <label class="functionPalette__container__switch__contentSwitch  --type01 --active">
+                                <input type="checkbox" class="functionPalette__container__switch__content__input">
+                                <span class="functionPalette__container__switch__content__slider"></span>
+                            </label>
+                            <label class="functionPalette__container__switch__contentSwitch  --type02 --invisible">
+                                <input type="checkbox" class="functionPalette__container__switch__content__input">
+                                <span class="functionPalette__container__switch__content__slider"></span>
+                            </label>
+                            <p class="functionPalette__container__switch__content__text">Clara</p>
+                        </div>
+                    </div>
+                    <div class="functionPalette__container__select">
+                        <p class="function3D__container__text">Tipo de mapa</p>
+                        <div class="functionPalette__container__select__content">
+                            <div class="functionPalette__container__select__content__selectBox">
+                                <select class="functionPalette__container__select__content__select" id="functionPalette__maptype">
+                                    <option class="functionPalette__container__select__content__option" value="1">Mapa de símbolos proporcionales</option>
+                                    <option class="functionPalette__container__select__content__option" value="0">Mapa de coropletas</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="functionPalette__container__select">
+                        <p class="function3D__container__text">Métodos de clasificación</p>
+                        <div class="functionPalette__container__select__content">
+                            <div class="functionPalette__container__select__content__selectBox">
+                                <select class="functionPalette__container__select__content__select" id="functionPalette__classMethod">
+                                    <option class="functionPalette__container__select__content__option" value="0">Cuantiles</option>
+                                    <option class="functionPalette__container__select__content__option" value="1">Intervalos naturales</option>
+                                    <option class="functionPalette__container__select__content__option" value="2">Intervalos iguales</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="functionPalette__container__select">
+                        <p class="function3D__container__text">Número de clases</p>
+                        <div class="functionPalette__container__select__content">
+                            <div class="functionPalette__container__select__content__selectBox">
+                                <select class="functionPalette__container__select__content__select" id="functionPalette__numberMethod">
+                                    <option class="functionPalette__container__select__content__option" value="1">1</option>
+                                    <option class="functionPalette__container__select__content__option" value="2">2</option>
+                                    <option class="functionPalette__container__select__content__option" value="3">3</option>
+                                    <option class="functionPalette__container__select__content__option" value="4">4</option>
+                                    <option class="functionPalette__container__select__content__option" value="5" selected>5</option>
+                                    <option class="functionPalette__container__select__content__option" value="6">6</option>
+                                    <option class="functionPalette__container__select__content__option" value="7">7</option>
+                                    <option class="functionPalette__container__select__content__option" value="8">8</option>
+                                    <option class="functionPalette__container__select__content__option" value="9">9</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="functionPalette__container__select">
+                        <p class="function3D__container__text">Gamas de colores</p>
+                        <div class="functionPalette__container__selectListbox">
+                            <ul class="functionPalette__container__selectListbox__selectList">
+                                <li class="functionPalette__container__selectListbox__selectList__item --active" id="paletteColor__original">
+                                    Color original        
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__blue">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShameBlue001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameBlue009 c9"></li>
+                                    </ul>
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__red">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShameRed001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameRed009 c9"></li>
+                                    </ul>
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__orange">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShameOrange001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameOrange009 c9"></li>
+                                    </ul>
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__green">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShameGreen001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameGreen009 c9"></li>
+                                    </ul>
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__yellow">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShameYellow001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShameYellow009 c9"></li>
+                                    </ul>
+                                </li>
+                                <li class="functionPalette__container__selectListbox__selectList__item" id="paletteColor__purple">
+                                    <ul class="functionPalette__paletteList">
+                                        <li class="functionPalette__paletteList__color --colorShamePurple001 c1"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple002 c2"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple003 c3"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple004 c4"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple005 c5"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple006 c6"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple007 c7"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple008 c8"></li>
+                                        <li class="functionPalette__paletteList__color --colorShamePurple009 c9"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="functionPalette__container__select">
+                        <p class="function3D__container__text">Modo</p>
+                        <div class="functionPalette__container__select__content">
+                            <div class="functionPalette__container__select__content__selectBox">
+                                <select class="functionPalette__container__select__content__select" id="function__darkMode">
+                                    <option class="functionPalette__container__select__content__option" value="1" selected>Claro</option>
+                                    <option class="functionPalette__container__select__content__option" value="2">Oscuro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toolBar__resize" id="toolBar__resize"></div>
+    <div class="toolBar__collapseBtn" name="Izquierdo" title="Botón panel izquierdo">
+        <div class="toolBar__collapseBtn__triangle"></div>
+    </div>
+</div>

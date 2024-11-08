@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head cache-control="max-age=5184000">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <meta name="copyright" content="DANE - Departamento Administrativo Nacional de Estadística">
+        <meta name="keywords" content="geoportal,dane,geo visor,geovisor,censo colombia,agricultura,tematico,empresas,departamental,directorio estadistico empresas,actividad economica,dest,codigos municipios,dane mapas,mapas dane,visor dane,visor,geoportales y visores geograficos en colombia,visor dane,dane empresas,actividades empresas en colombia dane,empresas georreferenciadas,geovisores colombia,ideam geovisor,geovisor urbano,cvc ciiu,actividad economica,empresas">
+        <meta name="description" content="Conuslte la información sobre la identificación, ubicación y actividades económicas de todas las empresas activas a la fecha de la vigencia (no se incluyen personas naturales)."/>
+        <meta name="robots" content="follow"/>
+        <link reel="canonical" href="https://geoportal.dane.gov.co/geovisores/economia/directorio-estadistico-de-empresas/"/>
+        <meta name="google-site-verification" content="GfeoIrutQaM3rz5HPrtXFtWSP1WigTdXG3ckxcFUVWc">
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40249748-12"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-40249748-12');
+        </script>  
+        <link rel="preload" as="font" type="font/ttf" crossorigin href="https://geoportal.dane.gov.co/src/fonts/DANE-Geovisores.ttf"/>
+        <link rel="preload" as="font" type="font/woff" crossorigin href="https://geoportal.dane.gov.co/src/fonts/DANE-Geovisores.woff"/>
+
+        <!-- <?php include("./../../../src/html/vendor-global/favIcon.html") ?> -->
+        {{partial "./src/html/vendor-global/favIcon.html"/}}
+        
+        <title>Geoportal del DANE - Geovisor Directorio de Empresas 2023</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="https://geoportal.dane.gov.co/src/styles/geoportalfonts.min.css"/>
+        <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" type="text/css" href="/src/styles/geoportalglobal.min.css">
+        <link rel="stylesheet" type="text/css" href="./src/styles/outputs/directoriogeovisor.min.css">
+        <link rel="stylesheet" type="text/css" href="./src/styles/base/maptalks.css">
+    </head>
+    <body>
+         {{partial "./src/html/global/header.html"/}}
+        <section class="Geovisor">
+            <div class="Geovisor__content">
+                {{partial "./src/html/vendor-global/loader.html"/}}
+                {{partial "./src/html/vendor-global/toolBar.html"/}}
+                {{partial "./src/html/vendor-global/actionBar.html"/}}
+                {{partial "./src/html/vendor-global/map.html"/}}
+                {{partial "./src/html/vendor-global/results.html"/}}
+                {{partial "./src/html/vendor-global/tutorialMeasure.html"/}}
+            </div>
+            {{partial "./src/html/vendor-global/table.html"/}}
+        </section>
+        {{partial "./src/html/vendor-global/printMap.html"/}}
+    </body>
+    {{partial "./src/html/vendor-local/printModal.html"/}}
+    {{partial "./src/html/vendor-local/helpModal.html"/}}
+    {{partial "./src/html/vendor-local/shareModal.html"/}}    
+    <script src="./src/scripts/base/jquery.js"></script>
+    <script src="./src/scripts/base/d3.v3.min.js"></script>
+    <script src="./src/scripts/base/chroma.min.js"></script>
+    <script src="./src/scripts/base/geostats.min.js"></script>
+    <script src="./src/scripts/base/jquery.dynatable.js"></script>
+    <script src="./src/scripts/base/html2canvas.min.js"></script>
+        <!-- SVG to Image Scripts -->
+	<script src="./src/scripts/base/rgbcolor.js"></script> 
+	<script src="./src/scripts/base/stackBlur.js"></script>
+	<script src="./src/scripts/base/canvg.js"></script> 
+	<script src="./src/scripts/base/jspdf.min.js"></script> 
+	<script src="./src/scripts/base/qrcode.min.js"></script> 
+    <script src="./src/scripts/base/maptalks.min.js"></script>   
+    <script src="./src/scripts/base/maptalks.formats.min.js"></script>
+    <script src="./src/scripts/base/maptalks.biglayer.js"></script>
+    <script src="./src/scripts/base/three.js"></script>	
+	<script src="./src/scripts/base/SceneUtils.js"></script>	
+	<script src="./src/scripts/base/d3-threeD.js"></script>	
+	<script src="./src/scripts/base/TrackballControls.js"></script>	
+	<script src="./src/scripts/base/OrbitControls.js"></script>	
+	<script src="./src/scripts/base/topojson.v1.min.js"></script>
+    <script src="./src/scripts/outputs/geovisorcommons.bundle.min.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOha4Su8EqOFQfDE8NjrS_KdSHfu50WkA&libraries=places,drawing,visualization&v=3"></script>
+    <script src="./src/scripts/base/infobox.js"></script>
+    <script data-main="./src/scripts/base/main.js" src="./src/scripts/base/require.js"></script>
+    <script src="./src/scripts/outputs/geovisorcontroladorprincipal.bundle.min.js"></script>
+    <script src="./src/scripts/outputs/geovisorcontrolesmapa.bundle.min.js"></script>
+    <script src="./src/scripts/outputs/geovisorbasicportalactions.bundle.min.js"></script>
+    <script src="./src/scripts/outputs/geovisorcontroladorherramientas.bundle.min.js"></script>
+
+    <script src="./src/scripts/base/markerwithlabel.js"></script>
+</html>
