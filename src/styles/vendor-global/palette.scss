@@ -1,0 +1,194 @@
+.--blackboard{
+    .functionPalette__container__select__content__select{
+        color: $gray1;
+        option{
+            color: $gray4;
+        }
+    }
+    .functionPalette__container__selectListbox__selectList__item{
+        color: $gray1;
+    }
+    .functionPalette__container__selectListbox__selectList{
+        &:after{
+            border-color: $gray1 transparent transparent transparent;
+        }
+    }
+    .functionPalette__container__switch__content__text{
+        color: $gray1;
+        font-weight: 400;
+    }
+}
+.functionPalette__container{
+    padding:  0 10px;
+}
+.functionPalette__container__select__content__select{
+    width: 100%;
+}
+.functionPalette__container__select__content__select{
+    width: 100%;
+    height: 25px;
+    margin: 5px 0;
+    font-size: 0.8em;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $gray9;
+    color: $gray4;
+    font-weight: 400;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+        border-bottom: 1px solid $sixColor;
+    }
+    &:hover{
+        border-bottom: 1px solid $sevenColor;
+    }
+}
+.functionPalette__container__selectListbox__selectList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid $gray9;
+    @include transition(all ease-in-out 0.2s);
+    &:after{
+        content:'';
+        position: absolute;
+        right: 7px;
+        top: 12px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 3.5px 0 3.5px;
+        border-color: $gray4 transparent transparent transparent;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:hover{
+        &:after{
+            border-width: 0 3.5px 6px 3.5px;
+            border-color:transparent transparent $sevenColor transparent;
+        }
+        .functionPalette__container__selectListbox__selectList__item{
+            display: inherit;
+        }
+    }
+}
+.functionPalette__container__selectListbox__selectList__item{
+    margin: 3px 0;
+    padding: 5px;
+    display: none;
+    font-size: 0.8em;
+    border-bottom: 1px solid $gray9;
+    @include transition(all ease-in-out 0.2s);
+    &.--active{
+        display: inherit;
+        border-bottom: 0px solid $gray9;
+    }
+    &:last-of-type{
+        border-bottom: 0px solid $gray9;
+    }
+    &:hover{
+        opacity: 0.8;
+    }
+}
+.functionPalette__paletteList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include flex;
+}
+.functionPalette__paletteList__color{
+    width: 20px;
+    height: 20px;
+    border:1px solid $white;
+}
+.functionPalette__container__switch{
+    margin: 15px 0,
+}
+.functionPalette__container__switch__content{
+    @include flex;
+}
+.functionPalette__container__switch__content__text{
+    margin: 4px 0;
+    font-weight: 500;
+    color: $gray6;
+    font-size: 0.8em;
+}
+.functionPalette__container__switch__contentSwitch{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin: 0 8px;
+    .functionPalette__container__switch__content__input{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    &.--invisible{
+        display: none;
+    }
+    &.--active {
+        .functionPalette__container__switch__content__slider{
+            background-color: $principalColor;
+            &:before{
+                @include transform(translateX(18px));
+            }
+        }
+    }
+}
+.functionPalette__container__switch__content__slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: $gray2;
+    @include transition(all ease-in-out 0.4s);
+    &:before{
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 4px;
+        bottom: 5px;
+        border-radius: 100%;
+        background-color: $white;
+        @include transition(all ease-in-out 0.4s);
+    }
+}
+.functionPalette__container__switch__content__input{
+    &:focus + .functionPalette__container__switch__content__slider{
+        box-shadow: 0 0 1px $sixColor;
+    }
+}
+.functionPalette__container__switch__content__selectBox{
+    width: 100%;
+}
+.functionPalette__container__switch__content__select{
+    width: 100%;
+    height: 25px;
+    margin: 5px 0;
+    font-size: 0.8em;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $gray9;
+    color: $gray4;
+    font-weight: 400;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+        border-bottom: 1px solid $sixColor;
+    }
+    &:hover{
+        border-bottom: 1px solid $sevenColor;
+    }
+}

@@ -1,0 +1,1221 @@
+.--settingsVisible{
+    .toolBar__container__buttons {
+        display:inherit;
+    }
+}
+.toolBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 372px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    @include transition(all ease-in-out 0.2s);
+    @include flex;
+    &.--collapse{
+        .toolBar__container{
+            width: auto;
+        }
+       .toolBar__container__panel{
+            width: 0;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1000;
+        }
+       .toolBar__container__buttons{
+            margin: 0;
+        }
+        .toolBar__collapseBtn{
+            right: -20px;
+        }
+       .toolBar__collapseBtn__triangle{
+            border-width: 5px 0 5px 8px;
+            border-color: transparent transparent transparent $white;
+        }
+       .toolBar__collapseBtn{
+            &:hover{
+               .toolBar__collapseBtn__triangle {
+                    margin: 14px 6px;
+                }
+            }
+        }
+        .toolBar__resize{
+            width: 0;
+        }
+    }
+}
+.toolBar__container{
+    //height: 100%;
+    width: 100%;
+    background: $white;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+}
+.toolBar__resize{
+    background: $gray12;
+    height: 100%;
+    width: 3px;
+    margin: 0;
+    cursor: e-resize;
+    @include transition(all ease-in-out 0.3s);
+    &:hover{
+        background: $principalColor;
+    }
+}
+.toolBar__collapseBtn{
+    width: 20px;
+    height: 40px;
+    background: $principalColor;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $fifthColor;
+       .toolBar__collapseBtn__triangle{
+            margin: 14px 2px;
+        }
+    }
+}
+.toolBar__collapseBtn__triangle{
+    width: 0;
+    height: 0;
+    margin: 14px 4px;
+    border-style: solid;
+    border-width: 5px 8px 5px 0;
+    border-color: transparent $white transparent transparent ;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__buttons{
+    width:100%;
+    display: none;
+}
+.toolBar__container__buttons__list{
+    list-style: none;
+    padding: 10px 5px;
+    margin: 0;
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.toolBar__container__buttons__list__item{
+    text-align: center;
+    position: relative;
+    //padding: 10px 3px;    
+    display: none;
+    @include calc(width,'20% - 6px');
+    &.--principal{
+        background: $gray1;
+        display: initial;
+    }
+    &:after{
+        display: none;
+        position: absolute;
+        top:10px;
+        padding: 5px 10px;
+        background:$blackTransparency;
+        color: $gray1;
+        z-index: 10;
+        border-radius: 4px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:hover{
+        &:after{
+            display: inherit;
+        }
+    }
+    &.--active{
+        display: initial;
+    }
+}
+.toolBar__container__panel{
+    @include calc(width,'100%');
+    overflow-y: auto;
+    overflow-x:none;
+    max-height: 85vh;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.toolBar__container__panel__icons{
+    padding: 0;
+}
+.toolBar__container__buttons__list__item__btn{
+    background: transparent;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    &:hover{
+        opacity: 0.7;
+       .toolBar__container__buttons__list__item__btn__icon{
+            background: $gray9;
+            color: $gray1;
+        }
+    }
+    &.--active{
+        .toolBar__container__buttons__list__item__btn__icon{
+            background: $secondaryColor;
+            color: $gray1;
+        }
+    }
+}
+.toolBar__container__buttons__list__item__btn__iconName{
+    margin:3px 0;
+    font-size: 0.9em;
+    color: $gray4;
+}
+.toolBar__container__panel__icons__list__item__btn__name{
+    background: transparent;
+    border:none;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    &:hover{
+        opacity: 0.7;
+       .toolBar__container__buttons__list__item__btn__icon{
+            background: $gray9;
+            color: $gray1;
+        }
+    }
+    &.--active{
+        .toolBar__container__buttons__list__item__btn__icon{
+            background: $secondaryColor;
+            color: $gray1;
+        }
+    }
+}
+.toolBar__container__buttons__list__item__btn__link{
+    text-decoration: none;
+    color: $gray4;
+}
+.toolBar__container__buttons__list__item__btn__icon{
+    font-size: 1.3em;
+    color:$gray6;
+    line-height: 0;
+    text-align: center;
+    width: 30px;
+    height: 25px;
+    border-radius: 100%;
+    padding:6px 4px 3px 2px;
+    margin: 0 auto;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__buttons__list__item__btn__name{
+    margin:3px 0;
+    font-size: 0.9em;
+    color: $gray4;
+}
+
+.toolBar__container__panel{
+    @include calc(width,'100%');
+    overflow-y: auto;
+    overflow-x:none;
+    max-height: 90vh;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.toolBar__container__panel__icons{
+    padding: 0;
+    background-color: $gray1;
+}
+.toolBar__container__panel__icons__list{
+    list-style: none;
+    padding:2px 0;
+    margin: 0;
+    @include flex;
+    @include justify-content(center);
+}
+.toolBar__container__panel__icons__list__item{
+    width: 22%;
+    padding: 0 5px;
+    margin: 4px 0;
+    text-align: center;
+}
+.toolBar__container__panel__icons__list__item__btn{
+    background: transparent;
+    border:none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    &:hover{
+        opacity: 0.7;
+       .toolBar__container__panel__icons__list__item__btn__icon{
+            background: $gray9;
+            color: $gray1;
+        }
+    }
+    
+}
+.toolBar__container__panel__icons__list__item__btn__link{
+    text-decoration: none;
+    color: $gray4;
+}
+.toolBar__container__panel__icons__list__item__btn__icon{
+    font-size: 1.3em;
+    color:$principalColor;
+    line-height: 0;
+    text-align: center;
+    width: 30px;
+    height: 25px;
+    border-radius: 100%;
+    padding:6px 4px 3px 2px;
+    margin: 0 auto;
+    @include transition(all ease-in-out 0.2s);
+}
+// .toolBar__container__panel__icons__list__item__btn__iconName{
+//     margin:3px 0;
+//     font-size: 0.7em;
+// }
+.toolBar__container__panel__functionBox{
+    padding: 0;
+    display: none;
+    &.--visible{
+        display: inherit;
+    }
+}
+.toolBar__container__panel__functionBox__title{
+    border-top: 1px solid $gray7;
+    border-bottom: 1px solid $gray7;
+    text-align: center;
+    margin: 3px 0;
+    padding: 7px 0;
+    font-weight: 800;
+    color:$gray11;
+    background: $gray13;
+    font-size:0.9em;
+}
+.toolBar__container__panel__functionBox__actionName{
+    margin: 8px 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color:$gray4;
+}
+.toolBar__container__panel__functionBox__checkList{
+    list-style: none;
+    padding: 0;
+    margin: 0 8px;
+}
+.toolBar__container__panel__functionBox__checkList__item{
+    margin: 8px 0;
+    position: relative;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        .toolBar__container__panel__functionBox__checkList__item__container{
+            opacity: 0.7;
+        }
+    }
+    &.--invisible{
+        display: none;
+    }
+    &.--visible{
+        .toolBar__Container__panel__functionBox__checkList__item__slideTrans{
+            @include flex;
+        }
+        .toolBar__container__panel__functionBox__checkList__item__source{
+            display: inherit;
+        }
+        .toolBar__container__panel__functionBox__checkList__item__checkSquare{
+            background: $gray1;
+            .DANE__Geovisor__icon__checkChecked{
+                display: inherit;
+            }
+        }
+        .toolBar__container__panel__functionBox__checkList__item__text{
+            font-weight: 600;
+        }
+    }
+    &.--uploadLayer{
+        .toolBar__container__panel__functionBox__checkList__item__container{
+            .toolBar__container__panel__functionBox__checkList__item__checkSquare{
+                border:2px solid $principalColor;
+                .DANE__Geovisor__icon__checkChecked{
+                    color: $principalColor;
+                }
+            }
+        }
+    }
+}
+
+.toolBar__container__panel__functionBox__checkList__item__container{
+    @include flex;
+    @include flex-wrap(wrap);
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__checkList__item__check{
+    margin: 3px 0;
+    opacity: 0;
+    z-index: 2;
+}
+.toolBar__container__panel__functionBox__checkList__item__text{
+    font-size: 0.9em;
+    margin: 0px 8px;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__checkList__item__checkSquare{
+    position: relative;
+    width:10px;
+    height: 10px;
+    border: 2px solid $gray8;
+    border-radius: 2px;
+    @include transition(all ease-in-out 0.2s);
+    .DANE__Geovisor__icon__checkChecked{
+        position: absolute;
+        top: 2px;
+        left: -3px;
+        color: $gray8;
+        line-height: 0.5;
+        display: none;
+    }
+}
+.toolBar__container__panel__functionBox__checkList__item__text__square{
+    margin: 0px 5px;
+    padding: 0 8px;
+    line-height: 0;
+    background: $white;
+    border-radius: 2px;
+    border: 2px solid $gray4;
+}
+.toolBar__container__panel__functionBox__checkList__item__Square{
+    margin: 1px 0 0 5px;
+    padding: 0 10px;
+    line-height: 0;
+    background: $white;
+    border-radius: 1px;
+    height: 10px;
+    border: 1px solid $gray4;
+}
+.--Parques{
+    .toolBar__container__panel__functionBox__checkList__item__Square{
+        border: 1px solid #798A02;
+        background: #798A0299;
+    }
+} 
+.--ResguardosIndigenas{
+    .toolBar__container__panel__functionBox__checkList__item__Square{
+        border: 1px solid #FF8B17;
+        background: #ff8b1799;
+    }
+}
+.--ConsejosComunitariosNegros{
+    .toolBar__container__panel__functionBox__checkList__item__Square{
+        border: 1px solid #A1511B;
+        background: #A1511B99;
+    }
+}
+.--ZonasDeReservaCampesina{
+    .toolBar__container__panel__functionBox__checkList__item__Square{
+        border: 1px solid #53010e;
+        background: #53010e99;
+    }
+}
+.--Veredas{
+    .toolBar__container__panel__functionBox__checkList__item__Square{
+        border: 2px solid #456807;
+    }
+}
+.toolBar__container__panel__functionBox__checkList__item__deleteLayer{
+    width: 10px;
+    color: $gray6;
+    font-size: 1.1em;
+}
+.toolBar__Container__panel__functionBox__checkList__item__slideTrans{
+    display: none;
+    width: 100%;
+    margin: 5px 0;
+}
+.toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBar{
+    width: 80%;
+    height: 3px;
+    background: $gray5;
+    margin: 8px 2px;
+    position: relative;
+}
+.toolBar__Container__panel__functionBox__checkList__item__slideTrans__scrollBtn{
+    width: 6px;
+    padding: 0;
+    height: 15px;
+    background: $fifthColor;
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    &:hover{
+        background: $fourthColor;
+        height: 18px;
+        top: -8px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+.toolBar__Container__panel__functionBox__checkList__item__slideTrans__textValue{
+    font-size: 0.65em;
+    font-weight: 900;
+    margin: 0 3px;
+    color: $gray4;
+    text-transform: uppercase;
+}
+.toolBar__container__panel__functionBox__checkList__item__source{
+    display: none;
+    padding: 5px 15px;
+}
+.toolBar__container__panel__functionBox__checkList__item__source__text{
+    margin: 5px 0;
+    font-size:0.7em;
+    color: $gray8;
+}
+.toolBar__container__panel__functionBox__checkList__item__source__link{
+    color: $gray6;
+    margin: 5px 0;
+    font-size:0.7em;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        color:$principalColor;
+    }
+}
+.toolBar__container__panel__functionBox__radioList{
+    list-style: none;
+    padding: 0;
+    margin: 0 8px 10px 8px;
+    @include flex;
+    @include flex-wrap(wrap);
+    &.--invisible{
+        display: none;
+    }
+}
+.toolBar__container__panel__functionBox__radioList__item{
+    position: relative;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+    width: 100%;
+    @include flex;
+    &.--full{
+        width: 100%;
+    }
+    &.--invisible{
+        display: none;
+    }
+    &.--active{
+        .toolBar__container__panel__functionBox__radioList__item__radioBox{
+            background: $white;
+            border: 2px solid $principalColor;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: $principalColor;
+            }
+        }
+    }
+    &.--disabled{
+        pointer-events: none;
+        cursor: not-allowed;
+        text-decoration: none;
+        color: $gray6;
+        .toolBar__container__panel__functionBox__radioList__item__radioBox{
+            border: 2px solid $gray9;
+            cursor: not-allowed;            
+        }
+    }
+}
+.toolBar__container__panel__functionBox__radioList__item__radio{
+    opacity: 0;
+    z-index: 2;
+}
+.toolBar__container__panel__functionBox__radioList__item__radioBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $gray8;
+    border-radius:100%;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__radioList__item__text{
+    font-size: 0.7em;
+    margin: 0 8px;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__text{
+    margin: 3px 0 8px 0;
+    font-size: 0.8em;
+    font-weight: 400;
+    color: $gray4;
+}
+.toolBar__container__panel__functionBox__textInfo{
+    font-size: 0.85em;
+    margin:10px 10px 5px;
+    color: $gray4;
+    font-weight: 500;
+    &.--center{
+        text-align: center;
+    }
+}
+.toolBar__container__panel__functionBox__BaseMapList{
+    list-style: none;
+    padding: 0 10px;
+    margin: 0;
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.toolBar__container__panel__functionBox__BaseMapList__item{
+    width: 30%;
+    margin: 5px 2px;
+    &.--active{
+        .toolBar__container__panel__functionBox__BaseMapList__item__btn{
+            background: $sixColor;
+            border:1px solid $sixColor;
+            .toolBar__container__panel__functionBox__BaseMapList__item__btn__name{
+                color: $gray1;
+            }
+        }
+        .toolBar__container__panel__functionBox__BaseMapList__slideTrans{
+            @include flex;
+        }
+    }
+    &.--invisible{
+        display: none;
+    }
+}
+.toolBar__container__panel__functionBox__BaseMapList__item__btn{
+    background: $white;
+    border-radius: 4px;
+    border:1px solid $gray7;
+    padding: 0;
+    margin: 0;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $sixColor;
+        border-radius: 6px;
+       .toolBar__container__panel__functionBox__BaseMapList__item__btn__name{
+            color: $gray1;
+        }
+       .toolBar__container__panel__functionBox__BaseMapList__item__btn__imageBox__image{
+            @include transform(scale(1.05));
+        }
+    }
+    &:focus{
+        outline: $gray1 auto 0px;
+        border: 0px solid $gray1;
+    }
+    
+}
+.toolBar__container__panel__functionBox__BaseMapList__item__btn__imageBox{
+    width: 100%;
+    overflow: hidden;
+}
+.toolBar__container__panel__functionBox__BaseMapList__item__btn__name{
+    margin: 8px 0;
+    //font-weight: 700;
+    color: $gray11;
+    font-size: 0.9em;
+}
+.toolBar__container__panel__functionBox__BaseMapList__item__btn__imageBox__image{
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__BaseMapList__slideTrans{
+    display: none;
+    width: 100%;
+    margin: 5px 0;
+}
+.toolBar__container__panel__functionBox__BaseMapList__slideTrans__scrollBar{
+    width: 80%;
+    cursor: pointer;
+    height: 3px;
+    background: $gray5;
+    margin: 8px 2px;
+    position: relative;
+}
+.toolBar__container__panel__functionBox__BaseMapList__slideTrans__scrollBtn{
+    width: 6px;
+    padding: 0;
+    height: 15px;
+    background: $fifthColor;
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    &:hover{
+        background: $fourthColor;
+        height: 18px;
+        top: -8px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+.toolBar__container__panel__functionBox__BaseMapList__slideTrans__textValue{
+    font-size: 0.65em;
+    font-weight: 900;
+    margin: 0 3px;
+    color: $gray4;
+    text-transform: uppercase;
+}
+.toolBar__container__panel__functionBox__uploadType{
+    list-style: none;
+    margin: 10px 8px;
+    padding: 0;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+}
+.toolBar__container__panel__functionBox__uploadType__item{
+    color: $gray4;
+    width: 50%;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+       .toolBar__container__panel__functionBox__uploadType__item__name{
+            color: $sixColor;
+        }
+    }
+    &:last-of-type{
+       .toolBar__container__panel__functionBox__uploadType__item__name{
+            border-right: 0px solid $gray7;
+        }
+    }
+    &.--active{
+        color: $fifthColor;
+        font-weight: 700;
+    }
+}
+.toolBar__container__panel__functionBox__uploadType__item__name{
+    padding: 5px;
+    font-size: 0.9em;
+    margin: 0 5px;
+    text-align: center;
+    border-right: 1px solid $gray7;   
+}
+.toolBar__container__panel__functionBox__uploadType__type{
+    margin: 15px 0;
+    padding: 0 15px;
+    display: none;
+    &.--visible{
+        display:inherit;
+    }
+}
+.toolBar__container__panel__functionBox__uploadType__type__upload{
+    position: relative;
+    height: 80px;
+    &:hover{
+       .toolBar__container__panel__functionBox__uploadType__type__upload__name{
+            background: $fifthColor;
+            color: $gray1;
+       }
+    }
+}
+.toolBar__container__panel__functionBox__uploadType__type__upload__selectFile{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    z-index: 3;
+}
+.toolBar__container__panel__functionBox__uploadType__type__upload__name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:96%;
+    text-align: center;
+    color: $gray4;
+    font-size: 0.8em;
+    border: 1px solid $fifthColor;
+    border-radius:4px;
+    padding: 5px;
+    background: $white;
+    z-index: 2;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+}
+.toolBar__container__panel__functionBox__uploadType__type__uploadbtn{
+    width: 100%;
+    margin:15px 0;
+    color: $gray11;
+    font-size: 0.8em;
+    border: 1px solid $gray10;
+    border-radius:4px;
+    padding: 5px;
+    background: $white;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        border-radius: 8px;
+        background: $fifthColor;
+        color: $gray1;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.toolBar__container__panel__functionBox__uploadType__type__uploadbtn__icon{
+    margin: 3px 0;
+}
+.toolBar__container__panel__functionBox__uploadType__type__uploadbtn__name{
+    margin: 3px;
+}
+.toolBar__container__panel__functionBox__uploadType__type__seeLayer{
+    opacity: 0;
+    width: 100%;
+    margin:15px 0;
+    color: $gray11;
+    font-size: 0.8em;
+    border: 1px solid $gray7;
+    border-radius:4px;
+    padding: 5px;
+    background: $white;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        border-radius: 8px;
+        background: $fifthColor;
+        color: $gray1;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.--active{
+        opacity: 1;
+    }
+}
+.toolBar__container__panel__functionBox__uploadType__type__seeLayer__icon{
+    margin: 3px 0;
+}
+.toolBar__container__panel__functionBox__uploadType__type__seeLayer__name{
+    margin: 3px;
+}
+.toolBar__container__panel__functionBox__uploadType__type__upload__remove{
+    width: 100%;
+    margin:0 0 15px 0;
+    color: $gray11;
+    font-size: 0.8em;
+    border: 1px solid $gray7;
+    border-radius:4px;
+    padding: 5px;
+    background: $white;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        border-radius: 8px;
+        background: $gray1;
+    }
+}
+.toolBar__container__panel__functionBox__textLabel{
+    font-size: 0.8em;
+    color: $gray4;
+    margin: 5px 0 10px 0;
+}
+.toolBar__container__panel__functionBox__textInput{
+    width:95%;
+    margin:0 0 5px 0;
+    border-radius: 4px;
+    border:1px solid $gray8;
+    padding: 5px;
+    font-size: 0.8em;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 1px solid $fifthColor;
+    }
+}
+.toolBar__container__panel__functionBox__btn{
+    width: 100%;
+    margin:0 8px 15px 8px;
+    color: $gray11;
+    font-size: 0.8em;
+    border: 1px solid $gray7;
+    border-radius:4px;
+    padding: 5px;
+    background: $white;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 1px solid $fifthColor;
+    }
+    &:hover{
+        border-radius: 8px;
+        background: $fifthColor;
+        color: $gray1;
+    }
+}
+.functionFilter__accordion__nota{
+    margin: 16px;
+    padding: 0 8px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: $sevenColor;
+}
+@media screen and (max-width:1300px){
+    .toolBar__container__panel__functionBox__step__btnList__item{
+        width: 30%;
+        margin: 4px 6px 2px 0;
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape){
+    .toolBar__collapseBtn{
+        display: none;
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .--settingsVisible{
+        .toolBar__container__panel{
+            @include calc(width,'100%');
+        }
+    }
+    .toolBar {
+        height: auto;
+        top: 0px;
+        width: 90%;
+        &.--collapse {
+            left: -90%;
+        }
+        &.--visible{
+            width: 95%;
+            height: 100vh;
+            .toolBar__container{
+                @include flex;    
+            }
+        }
+    }
+    .toolBar__container{
+        width: 100%;
+    }
+    .toolBar__container__panel__functionBox{
+        height: 100%;
+        margin: 0;
+    }    
+    .toolBar__container__buttons{
+        width: 100%;
+    }
+    .toolBar__container__buttons__list__item{
+        &:hover{
+            &:after{
+                display: none;
+            }
+        }        
+    }
+    .toolBar__container__panel {
+        margin: 0;
+        @include calc(width,'100%');
+    }
+
+   .toolBar__container__panel__functionBox__checkList__item__text {
+        font-size: 0.75em;
+    }
+   .toolBar__container__panel__functionBox__step__title {
+        font-size: 0.9em;
+    }
+   .toolBar__container__panel__functionBox__MeasureOption__List__item__button__name {
+        font-size: 0.6em;
+    }
+   .toolBar__container__panel__functionBox__BaseMapList__item {
+        margin: 5px;
+        width: 45%;
+    }
+   .toolBar__container__panel__functionBox__uploadType__type__upload__name {
+        font-size: 0.75em;
+    }
+   .toolBar__container__panel__functionBox__uploadType__type__uploadbtn,
+   .toolBar__container__panel__functionBox__uploadType__type__upload__remove{
+        font-size: 0.75em;
+    }
+}
+@media screen and (max-width:$sizeSmallPhone){
+   .toolBar__container__panel__functionBox {
+        margin: 10px 3px;
+        height:500px;
+    }
+    .toolBar__container__panel__functionBox__title{
+        margin: 2px 5px;
+        padding: 5px 0;
+        font-size: 0.75em;
+    }
+   .toolBar__container__appTitle__name {
+        font-size: 0.75em;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__checkSquare{
+        top: 3px;
+        width: 8px;
+        height: 8px;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__text{
+        margin: 2px 2px;
+    }
+}
+/// Modo Oscuro
+.--blackboard{
+    .toolBar{
+        background: $blackboard2;
+    }
+    .toolBar__container__buttons{
+        background: $blackboard3;
+        border-right: 1px solid $gray4;
+    }
+    .toolBar__container__buttons__list__item{
+        &:after{
+            background:$white;
+            color: $gray4;
+        }
+    }
+    .toolBar__container__buttons__list__item__btn{
+        background: transparent;
+        &.--active{
+            .toolBar__container__buttons__list__item__btn__icon{
+                background: $blackboard2;
+            }
+            .toolBar__container__buttons__list__item__btn__name{
+                color: $gray1;
+            }
+        }
+        &:hover{
+            .toolBar__container__buttons__list__item__btn__icon{
+                background: $blackboardMagenta;
+                color: $gray1;
+                border: 1px solid $blackboardMagenta;
+            }
+            .toolBar__container__buttons__list__item__btn__name{
+                color: $gray1;
+            }
+        }        
+    }
+    .toolBar__container__buttons__list__item__btn__icon{
+        color: $gray12;
+        border: 1px solid $sevenColor;
+    }
+    .toolBar__container__buttons__list__item__btn__name{
+        color: $gray13;
+        font-weight: 400;
+    }
+    .toolBar__resize{
+        background: $blackboard4;
+    }
+    .toolBar__container__panel__icons__list__item{
+        border-right: 1px solid $gray4;
+    }
+    .toolBar__container__panel__icons__list__item__btn{
+        &:hover{
+            opacity: 1;
+            .toolBar__container__panel__icons__list__item__btn__icon{
+                background: $blackboardMagenta;
+                color: $gray1;
+                border: 1px solid $blackboardMagenta;
+            }
+        }
+    }
+    .toolBar__container__panel__icons{
+        padding: 0;
+        background-color: $blackboard2;
+    }
+    .toolBar__container__panel__icons__list__item__btn__icon{
+        color: $gray7;
+        border: 1px solid $sevenColor;
+    }
+    .toolBar__container__panel__icons__list__item__btn__iconName{
+        color: $gray1;
+    }
+    .toolBar__container__panel__functionBox{
+        &::-webkit-scrollbar-track {
+            background: $blackboard4; 
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $sixColor;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $blackboardMagenta; 
+        }
+    }
+    .toolBar__container__panel__functionBox__title{
+        background: $blackboard4;
+        border-top: 1px solid $gray4;
+        border-bottom: 1px solid $gray4;
+        color: $gray13;
+        font-weight: 500;
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__item{
+        &.--active{
+            .toolBar__container__panel__functionBox__BaseMapList__item__btn{
+                background: $sevenColor;
+            }
+        }
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__item__btn{
+        background: $blackboard4;
+        border:1px solid $gray11;
+        &:hover{
+            background: $blackboardMagenta;
+            border:1px solid $blackboardMagenta;
+        }
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__item__btn__name{
+        color: $gray1;
+        font-weight: 400;
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__slideTrans__textValue{
+        color: $gray1;
+        font-weight: 400;
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__slideTrans__scrollBtn{
+        background: $blackboardMagenta;
+    }
+    .toolBar__container__panel__functionBox__BaseMapList__slideTrans__scrollBar{
+        background: $blackboard7;
+    }
+    .toolBar__container__panel__functionBox__textInfo{
+        color: $gray13;
+        font-weight: 400;
+    }
+    .toolBar__container__panel__functionBox__radioList__item{
+        &.--active{
+            .toolBar__container__panel__functionBox__radioList__item__radioBox{
+                background: transparent;
+            }
+        }
+    }
+    .toolBar__container__panel__functionBox__radioList__item__radioBox{
+        background: transparent;
+        border: 2px solid $gray1;
+    }
+    .toolBar__container__panel__functionBox__radioList__item__text{
+        color: $gray1;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__checkSquare{
+        border: 2px solid $gray1;
+    }
+    .toolBar__container__panel__functionBox__checkList__item{
+        &.--visible{
+            .toolBar__container__panel__functionBox__checkList__item__checkSquare{
+                &:before{
+                    color: $sevenColor;
+                }
+            }
+        }   
+    }
+    .toolBar__container__panel__functionBox__checkList__item__text{
+        color:$gray1;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__slideTrans__textValue{
+        color: $gray1;
+        font-weight: 400;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__slideTrans__scrollBar{
+        background: $blackboard7;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__slideTrans__scrollBtn{
+        background: $blackboardMagenta;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__source__text{
+        color: $gray1;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__source__link{
+        color: $gray9;
+    }
+    .toolBar__container__panel__functionBox__checkList__item__deleteLayer{
+        color: $sevenColor;
+    }
+    .toolBar__container__panel__functionBox__uploadType__item{
+        color: $gray1;
+        &.--active{
+            color: $blackboardMagenta;
+        }
+        &:hover{
+            .toolBar__container__panel__functionBox__uploadType__item__name{
+                color: $thirdColor;
+            }
+        }
+    }
+    .toolBar__container__panel__functionBox__uploadType__item__name{
+        border-right: 1px solid $gray6;
+    }
+    .toolBar__container__panel__functionBox__uploadType__type__upload__name{
+        background: $blackboard2;
+        border:1px solid $blackboardMagenta;
+        color: $gray1;
+    }
+    .toolBar__container__panel__functionBox__textLabel{
+        color: $gray1;
+    }
+    .toolBar__container__panel__functionBox__textInput{
+        background: $blackboard4;
+        border:1px solid $alternativeColor001;
+        color: $gray1;
+        &:focus{
+            border:1px solid $alternativeColor002;
+        }
+    }
+    .toolBar__container__panel__functionBox__uploadType__type__uploadbtn,
+    .toolBar__container__panel__functionBox__uploadType__type__seeLayer{
+        background: $blackboard2;
+        border:1px solid $blackboardMagenta;
+        &:hover{
+            background: $blackboardMagenta;
+            border:1px solid $sevenColor;
+        }
+    }
+    .toolBar__container__panel__functionBox__uploadType__type__seeLayer__icon,
+    .toolBar__container__panel__functionBox__uploadType__type__seeLayer__name,
+    .toolBar__container__panel__functionBox__uploadType__type__uploadbtn__icon,
+    .toolBar__container__panel__functionBox__uploadType__type__uploadbtn__name{
+        color: $gray1;
+    }
+
+}

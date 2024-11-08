@@ -1,0 +1,29 @@
+.actionArrows{
+    position:absolute;
+    top: 5px;
+    right:50px;
+    z-index: 4;
+    @include flex;
+}
+.actionArrows__btn{
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 6px 0;
+    width: 35px;
+    text-align: center;
+    color: $gray6;
+    background: $white;
+    border: 0px solid $white;
+    outline: $white auto 0px;
+    border: none;
+    @include box-shadow(4px -2px 10px 3px $gray5);
+    @include transition(all ease-in-out 0.2s);
+}
+.actionArrows__btn:focus{
+    outline: $gray7 auto 0px;
+    border: 0px solid $gray7;
+}
+.actionArrows__btn:hover{
+    background: $gray8;
+    color: $gray1;
+}

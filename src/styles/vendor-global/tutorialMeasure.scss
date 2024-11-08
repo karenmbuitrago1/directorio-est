@@ -1,0 +1,128 @@
+.MeasureTutorial{
+    position: absolute;
+    top: 130px;
+    left: 20%;
+    width:300px;
+    height:auto;
+    background: $white;
+    border-top:1px solid $gray12;
+    border-right:1px solid $gray12;
+    border-bottom:1px solid $gray12;
+    border-left:8px solid $alternativeColor005;
+    border-radius: 4px;
+    z-index: 1000;
+    @include box-shadow(1px 1px 5px $gray1);
+    &.--invisible{
+        display: none;
+    }
+    &.step02{
+        top:240px;
+    }
+    &.step03{
+        left: 80px;
+        border-right:8px solid $alternativeColor005;
+        border-left:1px solid $gray12;
+        .MeasureTutorial__triangle{
+            border-width: 25px 0 25px 30px;
+            border-color: transparent transparent transparent $alternativeColor005;
+            left: initial;
+            right: -30px;
+        }
+    }
+}
+.MeasureTutorial__close{
+    position: absolute;
+    top:10px;
+    right:5px;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+        }
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray4;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray4;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.MeasureTutorial__triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 30px 25px 0;
+    border-color: transparent $alternativeColor005 transparent transparent;
+    position: absolute;
+    top: 5px;
+    left: -30px;
+}
+.MeasureTutorial__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.MeasureTutorial__list__item{
+    display: none;
+    position: relative;
+    padding: 5px 10px 20px 10px;
+    &.--visible{
+        display: inherit;
+    }
+}
+.MeasureTutorial__list__item__instruction{
+    text-align: center;
+}
+.MeasureTutorial__list__item__title{
+    font-size: 0.85em;
+    font-weight: 500;
+    padding: 0 10px;
+    color:$gray4;
+}
+.MeasureTutorial__list__item__image{
+    width: 150px;
+    margin: 0 auto;
+}
+@media screen and (max-width:1300px){
+    .MeasureTutorial{
+        &.step01{
+            left: 23%;
+        }
+    }
+}
+@media screen and (max-width:1100px){
+    .MeasureTutorial{
+        &.step01{
+            left: 30%;
+        }
+        &.step02{
+            left:31%;
+        }
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape){
+    .MeasureTutorial{
+        display: none;
+    }
+}

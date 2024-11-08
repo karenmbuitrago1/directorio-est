@@ -1,0 +1,72 @@
+.tooltip{
+    position: absolute;
+    font-weight: 400;
+    color:$gray1;
+    border-radius: 5px;
+    background:$magentaTransparency;
+    padding:5px 10px;
+    max-width: 300px;
+    opacity: 1;
+    z-index: 100;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    @include box-shadow( 0 0 8px $secondaryColor);
+}
+.tooltip__title{
+    font-size: 1em;
+    margin: 5px 0;
+}
+.tooltip__text{
+    margin: 5px 0;
+    font-size: 0.75em;
+}
+.gm-ui-hover-effect{
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+        }
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        top: 15px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 15px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    img{
+        display: none !important;
+    }
+}
+.locationPopUp__title{
+    font-size: 1.1em;
+    margin: 3px 0;
+}
+.locationPopUp__text{
+    margin: 5px 0;
+    font-size: 0.9em;
+    color:$gray1;
+}

@@ -1,0 +1,282 @@
+.functionAnalysis__StepContainer{
+    margin: 0 10px;
+}
+.functionAnalysis__StepContainer__step{
+    &.--invisible{
+        display: none;
+    }
+}
+.functionAnalysis__StepContainer__step__btnList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.functionAnalysis__StepContainer__step__btnList__item{
+    margin: 2px;
+    @include calc(width,'50% - 4px');
+}
+.functionAnalysis__StepContainer__btn{
+    width: 100%;
+    background: $white;
+    border:1px solid $gray5;
+    border-radius: 6px;
+    padding: 5px;
+    @include transition(all ease-in-out 0.2s);
+    &:hover,
+    &.--active{
+        background: $sixColor;
+        border:1px solid $fifthColor;
+        .functionAnalysis__StepContainer__btn__icon,
+        .functionAnalysis__StepContainer__btn__name{
+            color: $gray1;
+        }
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.functionAnalysis__StepContainer__btn__icon{
+    font-size: 1.5em;
+    line-height: 0;
+    color: $gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.functionAnalysis__StepContainer__btn__name{
+    font-size: 0.7em;
+    margin:3px 0;
+    color: $gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.functionAnalysis__boxDescription{
+    margin: 5px 0;
+    @include flex;
+    @include flex-wrap(wrap);
+    &.--invisible{
+        display: none;
+    }    
+}
+.functionAnalysis__boxDescription__icon{
+    width:40px;
+    font-size:2.2em;
+    text-align: center;
+    color:$sevenColor;
+}
+.functionAnalysis__boxDescription__text{
+    margin: 3px 0;
+    color: $gray4;
+    font-size: 0.8em;
+    @include calc(width,'100% - 40px');
+    &.--full{
+        @include calc(width,'100%');
+    }
+    &.--invisible{
+        display: none;
+    }
+}
+.functionAnalysis__boxDescription__text__bold{
+    font-weight: 600;
+}
+.functionAnalysis__SearchBox{
+    padding: 3px 5px;
+    margin: 0 0 10px 0;
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid $gray12;
+    @include calc(width,'100% - 10px');
+    @include box-shadow(2px 2px 3px -1px $gray10);
+    @include flex;
+    @include flex-wrap(wrap);
+    @include transition(all ease-in-out 0.2s);
+    &.--erase{
+        .functionAnalysis__SearchBox__input{
+            @include calc(width,'100% - 58px');
+        }
+        .functionAnalysis__SearchBox__eraseSearch{
+            display: inherit;
+        }
+    }
+}
+.functionAnalysis__SearchBox__errorMessage{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    font-size: 0.85em;
+    margin:0;
+    color:$sevenColor;
+    width: 100%;
+    word-wrap: break-word;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin:3px 0;
+    }
+}
+.functionAnalysis__SearchBox__input{
+    border: none;
+    font-size: 0.8em;
+    height: 25px;
+    @include calc(width,'100% - 30px');
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+.functionAnalysis__SearchBox__btn{
+    width:30px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    font-size: 1.5em;
+    color: $gray8;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        color:$gray4;
+        .DANE__Geovisor__icon__search{
+            @include transform(rotate(-5deg));
+        }
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    .DANE__Geovisor__icon__search{
+        position: absolute;
+        top: 3px;
+        left: 0;
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.functionAnalysis__SearchBox__eraseSearch{
+    display: none;
+    width:18px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+            background: $gray4;
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        top:18px;
+        left:0;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        top:18px;
+        left:0;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.functionAnalysis__list{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.functionAnalysis__list__option{
+    display: inherit;
+    &.--invisible{
+        display: none;
+    }
+}
+.functionAnalysis__slideTrans{
+    margin: 5px 0;
+    @include flex;
+}
+.functionAnalysis__slideTrans__scrollBar{
+    width: 80%;
+    height: 3px;
+    background: $gray5;
+    margin: 8px 2px;
+    position: relative;
+}
+.functionAnalysis__slideTrans__scrollBtn{
+    width: 6px;
+    padding: 0;
+    height: 15px;
+    background: $fifthColor;
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    &:hover{
+        background: $fourthColor;
+        height: 18px;
+        top: -8px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+.functionAnalysis__slideTrans__textValue{
+    font-size: 0.7em;
+    font-weight: 900;
+    margin: 0 3px;
+    color: $gray4;
+}
+.functionAnalysis__btn_heatMap,
+.functionAnalysis__btn{
+    width: 100%;
+    background: $white;
+    border:1px solid $principalColor;
+    border-radius: 4px;
+    padding: 3px 5px;
+    margin: 8px 0;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        background: $principalColor;
+        border-radius: 8px;
+        .functionAnalysis__btn__icon{
+            color: $gray1;
+        }
+        .functionAnalysis__btn__name{
+            color:$gray1;
+        }
+    }
+}
+.functionAnalysis__btn__icon{
+    font-size: 1.3em;
+    line-height: 0;
+    color: $gray11;
+    margin: 0 3px;
+    @include transition(all ease-in-out 0.2s);
+}
+.functionAnalysis__btn__name{
+    margin: 3px 0;
+    color:$gray4;
+    font-size: 0.85em;
+    @include transition(all ease-in-out 0.2s);
+}

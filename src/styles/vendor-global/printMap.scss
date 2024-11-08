@@ -1,0 +1,123 @@
+.printMapInfo{
+    display: none;
+    background:$white;
+    @include justify-content(space-between);
+    &.--active{
+        @include flex;
+    }
+}
+.printMapInfo__col{
+    width: 20%;
+    padding: 0;
+    border:1px solid $gray12;
+    border-left: 0;
+}
+.printMapInfo__GeovisorName{
+    font-size: 3em;
+    margin: 5px auto;
+    text-align: center;
+    line-height: 0;
+}
+.printMapInfo__col__logo{
+    font-size:3.5em;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    height: 50px;
+    .DANE__Geovisor__icon__logoDANE__01{
+        line-height: 0;
+    }
+}
+.printMapInfo__title{
+    text-align: center;
+    font-size: 0.8em;
+    margin: 3px 0;
+    height: auto;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:$gray6;
+    text-transform: uppercase;
+}
+.printMapInfo__subtitle{
+    text-align: center;
+    margin: 3px 0;
+    font-size: 0.75em;
+    color: $gray4;
+    font-weight: 400;
+}
+.printMapInfo__thirdtitle{
+    text-align: center;
+    margin: 3px 0;
+    font-size: 0.7em;
+    color: $gray6;
+    font-weight: 100;
+}
+.printMapInfo__date{
+    text-align: center;
+    margin: 3px 0;
+    font-size: 0.8em;
+    color: $gray6;
+    font-weight: 100;
+}
+.printMapInfo__text{
+    text-align: center;
+    margin: 3px 0;
+    font-size: 0.7em;
+    color: $gray6;
+    font-weight: 100;
+}
+.printMapInfo__qr {
+    height: 35%;
+    width: auto;
+    margin: 0 38%;
+}
+.printMapInfo__row{
+    width: 100%;
+    border-bottom:1px solid $gray12;
+    border-top:1px solid $gray12;
+}
+
+.printMapInfo__col__row{
+    padding: 0;
+    // border-left:1px solid $gray12;
+    // border-right:1px solid $gray12;
+    @include flex;
+    @include justify-content(space-between);
+    &:first-of-type{
+        border-top:1px solid $gray12;
+    }
+}
+.printMapInfo__col__row__col{
+    width: 50%;
+    border-bottom:1px solid $gray12;
+}
+@media screen and (max-width:$sizePhone){
+    .printMapInfo{
+        @include flex-wrap(wrap);
+    }
+    .printMapInfo__col{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1680px){
+    .printMapInfo__title {
+        font-size: 0.7em;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width:1500px){
+    .printMapInfo__title {
+        font-size: 0.6em;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .printMapInfo__title {
+        font-size: 0.6em;
+        height: 25px;
+    }
+}

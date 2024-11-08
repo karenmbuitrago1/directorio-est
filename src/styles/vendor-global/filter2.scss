@@ -1,0 +1,434 @@
+//----Estilos para los filtros de las tematicas ---//
+.--filtros{
+    &.--visibleGroupPrincipal{
+        .searchBox{
+            display: none;
+        }
+        .toolbar__secondPanelContent{
+            @include flex;
+            flex-direction: column;
+        }
+        .functionFilter__thematicGroup__more{
+            width: 100%;
+            @include order(1);
+            @include flex;
+        }
+        .functionFilter__thematicGroup__moreIcon{
+            margin: 8px 11px;
+        }
+        .functionFilter__thematicGroup__moreLine{
+            width: 8px;
+            height: 3px;
+            border-radius: 2px;
+            &:nth-child(1){
+                left: 11px;
+                top: 15px;
+                @include transform(rotate(45deg));
+            }
+            &:nth-child(2){
+                left: 11px;
+                top: 11px;
+                @include transform(rotate(-45deg));
+            }
+            &:nth-child(3){
+                display: none;
+            }
+        }
+        .functionFilter__thematicGroup__moreText {
+            margin: 15px 0;
+            &.--seemore{
+                display: none;
+            }
+            &.--back{
+                display: inherit;
+            }
+        }
+        .functionFilter__thematicGroup__list{
+            width: 100%;
+            // max-height: 50vh;
+            // overflow-y: scroll;
+            @include order(2);
+        }
+        .functionFilter__thematicGroup__item{
+           @include flex;
+            @include calc(width,'100% - 10px');    
+        }
+        .functionFilter__thematicGroup__icon{
+            margin: 5px;
+        }
+        .functionFilter__thematicGroup__name{
+            text-align: left;
+            margin: 16px 5px;
+        }
+        .functionFilter__thematic__list{
+            display: none;
+        }
+
+    }
+}
+//* Estilos de grupos  para filtros *//
+.functionFilter__thematicGroup{
+    @include flex;
+    @include flex-wrap(wrap);
+    &.--full{
+        .functionFilter__thematicGroup__list{
+            width: 100%;
+        }
+        .functionFilter__thematicGroup__item{
+            @include calc(width,'50% - 10px');  
+        }
+    }
+}
+.functionFilter__thematicGroup__list{
+    list-style: none;
+    margin: 5px 0;
+    padding: 0;
+    width: 80%;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(flex-start);
+}
+.functionFilter__thematicGroup__item{
+    cursor: pointer;
+    margin: 5px;
+    display: none;
+    @include calc(width,'50% - 10px');    
+    &:hover{
+        opacity: 0.7;
+    }
+    &.--active{
+        background: $gray1;        
+        border-radius: 10px;        
+        .functionFilter__thematicGroup__name{
+            color: $gray6;
+        }
+    }
+    &:nth-child(1),
+    &:nth-child(2){
+        display: initial;
+    }
+    &.--disable{
+        cursor: none;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+.functionFilter__thematicGroup__icon {
+    font-size: 1.6em;
+    border-radius: 100%;
+    padding: 5px 0;
+    margin: 5px auto;
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    border: 1px solid $gray3;
+    @include transition(all ease-in-out 0.2s);
+}
+.functionFilter__thematicGroup__name{
+    font-size: 0.9em;
+    padding:0 8px;
+    margin: 4px auto;
+    color: $gray4;
+    text-align: center;
+    // word-break: break-word;
+    @include transition(all ease-in-out 0.2s);
+}
+//ver más estilos de tema
+.functionFilter__thematicGroup__more{
+    width: 20%;
+    padding: 9px 0;
+    cursor: pointer;
+    &.--invisible{
+        display: none;
+    }
+}
+.functionFilter__thematicGroup__moreIcon{
+    width: 30px;
+    height: 30px;
+    background: $gray6;
+    border-radius: 100%;
+    margin: 8px auto;
+    position: relative;
+    border: 1px solid $gray1;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $fifthColor;
+        border: 1px solid $principalColor;
+        .functionFilter__thematicGroup__moreLine{
+            @include transform(rotateY(180deg));
+        }
+    }
+    &.--invisible{
+        display: none;
+    }
+}
+.functionFilter__thematicGroup__moreLine{
+    position: absolute;    
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: $white;
+    top: 14px;
+    left: 7px;    
+    @include transition(all ease-in-out 0.2s);
+    &:nth-child(2){
+        left: 13px;
+        @include transition(all ease-in-out 0.5s);
+    }   
+    &:nth-child(3){
+        left: 19px;
+        @include transition(all ease-in-out 0.4s);
+    }  
+}
+.functionFilter__thematicGroup__moreText{
+    font-size: 0.9em;
+    text-align: center;
+    margin: 8px 0;
+    &.--back{
+        display: none;
+    }
+}
+//Estilos sub grupo
+.functionFilter__thematic{
+    @include calc(width,'100%');
+}
+.functionFilter__thematic__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.functionFilter__thematic__item{
+    background: $gray1;
+    cursor: pointer;
+    position: relative;
+    &.--collapse{
+        .functionFilter__thematic__name{
+            color: $black;
+        }
+        .functionFilter__thematicVariable__list {
+            display: none;
+        }
+    }
+    &.--search{
+        .functionFilter__thematic__nameGroup,
+        .functionFilter__thematic__name,
+        &:before,
+        &:after{
+            display: none;
+        }
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        right: 18px;
+        top: 20px;
+        z-index: 3;
+        width: 12px;
+        height: 2px;
+        background: $gray6; 
+        border-radius: 5px;
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        right: 18px;
+        top: 20px;
+        z-index: 3;
+        width: 12px;
+        height: 2px;
+        background: $gray6; 
+        border-radius: 5px;
+        @include transition(all ease-in-out 0.2s);
+        @include transform(rotate(90deg));
+    }
+    &:hover{
+        background: $gray13;
+        .functionFilter__thematic__name{
+            opacity: 0.5;
+        }
+        &:before{
+            background: $sevenColor; 
+        }
+        &:after{
+            background: $sevenColor; 
+            @include transform(rotate(0deg));
+        }
+    }  
+}
+.functionFilter__thematic__name{
+    padding: 5px 15px 15px 15px;
+    margin: 0;
+    font-size: 0.9em;
+    color: $gray4;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        display: initial;
+    }
+}
+.functionFilter__thematic__nameGroup{
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    font-size: 0.9em;
+    color: $gray6;
+    font-weight: 900;
+    @include transition(all ease-in-out 0.2s);
+}
+
+//Estilos de variables
+.functionFilter__thematicVariable__list{
+    background: $white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.functionFilter__thematicVariable__item{
+    cursor: pointer;
+    padding: 10px 10px 10px 20px;
+    border-bottom:1px solid $gray7;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include transition(all ease-in-out 0.2s);
+    &:last-of-type{
+        border-bottom: none;
+    }
+    &:hover{
+        background: $gray13;
+        .functionFilter__thematicVariable__radio{
+            color: $principalColor;
+            &:after{
+                background: $principalColor;
+            }
+        }
+        .functionFilter__thematicVariable__icon{
+            background: $sixColor;
+            color: $white;
+        }
+    }
+    &.--active{
+        background: $principalColor;
+        .functionFilter__thematicVariable__radio{
+            color: $white;
+            &:after{
+                background: $white;
+            }
+        }
+        .functionFilter__thematicVariable__value{
+            color: $gray1;
+        }
+        .functionFilter__thematicVariable__icon{
+            color: $white;
+        }
+    }
+}
+.functionFilter__thematicVariable__radio{
+    width: 20px;
+    margin: 3px 0 0;
+    font-size: 1.2em;
+    color: $gray6;
+    position: relative;
+    @include transition(all ease-in-out 0.2s);
+    &:after{
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 5px;
+        height: 5px;
+        background: $white;
+        border-radius: 100%;
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.functionFilter__thematicVariable__value{
+    margin:6px 5px 2px;
+    font-size: 0.9em;
+    color: $gray4;
+    @include calc(width,'100% - 60px');
+    @include transition(all ease-in-out 0.2s);
+}
+.functionFilter__thematicVariable__subgroup{
+    margin:5px 0;
+    font-weight: 100;
+    font-size: 0.9em;
+    color: $gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.functionFilter__thematicVariable__icon{
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 100%;
+    color: $gray1;
+    @include transition(all ease-in-out 0.2s);
+}
+
+
+
+//Estilos modo oscuro
+.--blackboard{
+    .functionFilter__thematicGroup__item{
+        &.--active{
+            background: $magentaTransparency2;
+        }
+        .functionFilter__thematicGroup__name{
+            color:$gray13;
+        }
+    }
+    .functionFilter__thematic__item{
+        border-bottom: 1px solid $gray11;    
+        background: $blackboard;    
+        &:hover{
+            background: $blackboard4;
+        }
+        &.--active{
+            background: $blackboard5;
+        }
+    }
+    .functionFilter__thematic__nameGroup{
+        color: $gray2;
+    }
+    .functionFilter__thematic__name{
+        color: $gray1;
+        font-weight: 400;
+    }
+    .functionFilter__thematic__item{
+        &.--collapse{
+            .functionFilter__thematic__name{
+                color: $gray1;
+            }
+        }
+    }
+    .functionFilter__thematic__icon,
+    .functionFilter__thematicGroup__icon{
+        @include filter(saturate(2.5));
+    }
+    .filter__thematic__name{
+        color: $gray13;
+        background: $blackboard5;
+    }
+    .functionFilter__thematicVariable__item{
+        background: $blackboard;
+        border-bottom: 1px solid $gray11;
+        &:hover{
+            background: $blackboard5;
+        }
+        &.--active{
+            background: $principalColor;
+        }
+    }
+    .functionFilter__thematicVariable__radio{
+        color: $blackboardMagenta;
+        &:after{
+            background: transparent;
+        }
+    }
+    .functionFilter__thematicVariable__value{
+        color: $white;
+    }
+    .functionFilter__thematicGroup__moreText{
+        color: $gray1;
+    }
+}

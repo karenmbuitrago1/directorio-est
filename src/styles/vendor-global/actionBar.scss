@@ -1,0 +1,253 @@
+.ActionBar{
+    position: absolute;
+    top:5px;
+    z-index: 5;
+    @include calc(right,'20% + 25px');
+    @include transition(all ease-in-out 0.2s);
+    &.--collapseRight{
+        @include calc(right,'30px');
+    }
+}
+.ActionBar__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: $white;
+    &.--invisible{
+        .ActionBar__list__item{
+            display: none;
+            &.ActionBar__ToolBtn{
+                display: inherit;
+                .ActionBar__list__item__btn{
+                    background: $fifthColor;
+                    color: $white;
+                    &:after{
+                        @include transform(rotate(45deg));
+                        background: $white; 
+                    }
+                    &:before{
+                        @include transform(rotate(45deg));
+                        background: $white; 
+                    }
+                }
+            }
+        }
+    }
+}
+.ActionBar__list__item{
+    position: relative;
+    &:hover{
+        &:after{
+            display:inherit;
+        }
+    }
+    &:after{
+        display: none;
+        position: absolute;
+        top:10px;
+        right: 45px;
+        padding: 5px 10px;
+        font-size: 0.7em;
+        background:$blackTransparency;
+        color: $gray1;
+        font-weight: 600;
+        border-radius: 4px;
+        text-align: center;
+        @include box-shadow(0px 0px 4px 1px $black);
+        @include transition(all ease-in-out 0.2s);    
+    }
+}
+.ActionBar__ToolBtn{
+    position: relative;
+    .ActionBar__list__item__btn{
+        &:after{
+            position: absolute;
+            content: '';
+            right: 5px;
+            bottom:10px;
+            width: 2px;
+            height: 5px;
+            background: $gray6; 
+            @include transform(rotate(-45deg));
+            @include transition(all ease-in-out 0.2s);
+        }
+        &:before{
+            position: absolute;
+            content: '';
+            right: 6.5px;
+            bottom: 12px;
+            height: 2px;
+            width: 6px;
+            background: $gray6; 
+            @include transform(rotate(-45deg));
+            @include transition(all ease-in-out 0.2s);
+        }
+        &:hover{
+            &:after{
+                background: $white; 
+            }
+            &:before{
+                background: $white; 
+            }
+        }
+    }
+    &:after{
+        content: 'Botón de herramientas';
+        width: 120px;
+    }
+}
+.ActionBar__FullScreen{
+    &:after{
+        content: 'Pantalla completa';
+        width: 120px;
+    }
+}
+.ActionBar__FullExtend{
+    &:after{
+        content: 'Centrar mapa';
+        width: 90px;
+    }
+}
+.ActionBar__Plus{
+    &:after{
+        content: 'Ampliar';
+    }
+}
+.ActionBar__Minus{
+    &:after{
+        content: 'Reducir';
+    }
+}
+.ActionBar__StreetView{
+    &:after{
+        content: 'Street view';
+        width: 60px;
+    }
+}
+.ActionBar__moveMap{
+    &:after{
+        content: 'Mover mapa';
+        width: 70px;
+    }
+}
+.ActionBar__RectangleZoom{
+    &:after{
+        content: 'Ampliar rectangulo';
+        width: 100px;
+    }
+}
+.ActionBar__moveMap{
+    &:after{
+        content: 'Mover mapa';
+    }
+}
+.ActionBar__Perspective{
+    &:after{
+        content: 'Perspectiva 3D';
+        width: 80px;
+    }
+}
+.ActionBar__Slide{
+    &:after{
+        content: 'Deslizar';
+    }
+}
+.ActionBar__Views{
+    &:after{
+        content: 'Pantallas';
+    }
+}
+.ActionBar__identify{
+    &:after{
+        content: 'Identificador';
+    }
+}
+.ActionBar__list__item__btn{
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px 0;
+    width: 40px;
+    text-align: center;
+    color: $gray6;
+    background: $white;
+    border: 0px solid $white;
+    outline: $white auto 0px;
+    border: none;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+    &:hover{
+        background: $gray8;
+        color: $gray1;
+    }
+    &.--active{
+        background:$fifthColor;
+        color: $gray1;
+    }
+}
+.ActionBar__list__item__scrollBar{
+    width: 5px;
+    height: 80px;
+    margin: 5px auto;
+    position: relative;
+    background:$gray7;
+}
+.ActionBar__list__item__scrollBar__Arrow{
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 18px;
+    height: 6px;
+    border-radius: 4px;
+    background: $sixColor;
+    border:none;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $principalColor;
+        width: 20px;
+        left: -8px;
+    }
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 0px solid $gray7;
+    }
+}
+@media screen and (max-width:1100px){
+    .ActionBar__list__item{
+        &.ActionBar__ZoomBar{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .ActionBar{
+        right: 0;;
+        top: 5px;
+        border-radius:10px;
+        overflow: hidden;
+    }
+    .ActionBar__list {
+        @include box-shadow(none);     
+    }
+    .ActionBar__list__item{
+        &:hover{
+            &:after{
+                display:none;
+            }
+        }
+        &.ActionBar__moveMap,
+        &.ActionBar__Plus,
+        &.ActionBar__Minus{
+            display: none;
+        }
+    }
+    .ActionBar__list__item__btn {
+        font-size: 1.2em;
+        padding: 5px 0;
+        width: 45px;
+        height: 45px;
+        border-right: 1px solid $gray5;
+    }
+}

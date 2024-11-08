@@ -1,0 +1,23 @@
+.--blackboard{
+    .Footer{
+        background:$blackboard3;
+    }
+    .Footer__container__titleBox__name,
+    .Footer__container__AboutMore__list__item__textBox__title,
+    .Footer__container__AboutMore__list__item__textBox__text{
+        color: $gray1;
+    }
+    .Footer__container__AboutMore__list__item__textBox__text__link{
+        color: $gray2;
+    }
+    .Footer__container__AboutMore__list__item__icon{
+        color:$gray1;
+        background: transparent;
+        border:2px solid $white;
+        span{
+            &:before{
+                font-weight: 100;
+            }
+        }
+    }
+}

@@ -1,0 +1,199 @@
+@mixin prefix-prop($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			-webkit-#{$property}: #{$value};
+		} @else if $prefix == moz {
+			-moz-#{$property}: #{$value};
+		} @else if $prefix == ms {
+			-ms-#{$property}: #{$value};
+		} @else if $prefix == o {
+			-o-#{$property}: #{$value};
+		} @else if $prefix == spec {
+			#{$property}: #{$value};
+		} @else  {
+			@warn 'Unrecognized prefix: #{$prefix}';
+		}
+	}
+}
+@mixin prefix-val($property,$value,$prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			#{$property}: -webkit-#{$value};
+		} @else if $prefix == moz {
+			#{$property}: -moz-#{$value};
+		} @else if $prefix == ms {
+			#{$property}: -ms-#{$value};
+		} @else if $prefix == o {
+			#{$property}: -o-#{$value};
+		} @else if $prefix == spec {
+			#{$property}: #{$value};
+		} @else  {
+			@warn 'Unrecognized prefix: #{$prefix}';
+		}
+	}
+}
+@mixin keyframes($animationName,$prefixes) {
+	@each $prefix in $prefixes {
+		@if $prefix == webkit {
+			@-webkit-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == moz {
+			@-moz-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == ms {
+			@-ms-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == o {
+			@-o-keyframes #{$animationName} {
+				@content;
+			}
+		}
+		@if $prefix == spec {
+			@keyframes #{$animationName} {
+				@content;
+			}
+		}
+	}
+}
+@mixin appearance ($value){
+	-webkit-appearance: ($value);
+	-moz-appearance: ($value);
+	-ms-appearance: ($value);
+	-o-appearance: ($value);
+	appearance: ($value);
+}
+@mixin column($num){
+	-webkit-column-count: ($num);
+  -moz-column-count: ($num);
+  column-count: ($num);
+}
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin box-shadow($box-shadow) {
+		-webkit-box-shadow:$box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow:$box-shadow;
+}
+@mixin transform-origin($transform){
+	-webkit-transform-origin:$transform;
+	-moz-transform-origin:$transform;
+	-o-transform-origin:$transform;
+	transform-origin:$transform
+}
+@mixin grayscale ($percent) {
+	-webkit-filter: grayscale($percent);
+	-ms-filter: grayscale($percent);
+	-o-filter: grayscale($percent);
+	-moz-filter: grayscale($percent);
+	filter: grayscale($percent);
+}
+
+@mixin box-sizing{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin opacidadBlanco {
+	background-color: rgba(255,255,255,0.9);
+}
+@mixin opacidadBlanco-light {
+	background-color: rgba(255,255,255,0.8);
+}
+@mixin opacidadNegro {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+@mixin flex{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: box;
+	display: flex;
+}
+
+@mixin justify-content($values) {
+  -webkit-box-justify-content: $values;
+  -moz-box-justify-content:  $values;
+  -webkit-justify-content:  $values;
+  -ms-justify-content:  $values;
+  justify-content:  $values;
+}
+
+@mixin flex-basis($values) {
+  -webkit-flex-basis:$values;
+  flex-basis: $values;
+  -ms-flex:$values;
+}
+
+@mixin align-items($values) {
+  -webkit-box-align-items: $values;
+  -moz-box-align-items:  $values;
+  -webkit-align-items:  $values;
+  -ms-align-items:  $values;
+  align-items:  $values;
+}
+@mixin flex-wrap($values) {
+  -webkit-box-flex-wrap: $values;
+  -moz-box-flex-wrap:  $values;
+  -webkit-flex-wrap:  $values;
+  -ms-flex-wrap:  $values;
+  flex-wrap:  $values;
+}
+
+@mixin align-content($values) {
+  -webkit-align-content:$values;
+  -moz-align-content:$values;
+  -webkit-align-content:$values;
+  -ms-align-content:$values;
+  align-content:$values;
+}
+
+@mixin transition($values){
+  -webkit-transition: $values;
+  -moz-transition:    $values;
+  -ms-transition:     $values;
+  -o-transition:      $values;
+  transition:         $values;
+}
+
+@mixin transform($values){
+  -webkit-transform:  $values;;
+  -moz-transform:     $values;
+  -ms-transform:      $values;
+  -o-transform:       $values;
+  transform:          $values;
+}
+
+@mixin filter($values){
+  -webkit-filter:  $values;;
+  -moz-filter:     $values;
+  -ms-filter:      $values;
+  -o-filter:       $values;
+  filter:          $values;
+}
+
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;  
+    -moz-box-ordinal-group: $val;     
+    -ms-flex-order: $val;     
+    -webkit-order: $val;  
+    order: $val;
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

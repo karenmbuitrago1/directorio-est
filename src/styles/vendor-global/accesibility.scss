@@ -1,0 +1,160 @@
+.accesibility {
+    width: 200px;
+    @include flex;
+    @include justify-content(flex-end);
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        .accesibility__btn__icon{
+            background: $fourthColor;
+            color: $gray1;
+            border: 1px solid $fifthColor;
+        }
+        .accesibility__list{
+            @include flex;
+        }  
+    }
+}
+.accesibility__btn {
+    cursor: pointer;
+    margin: 0;
+    // width: 35px;
+    // height: 35px;
+    background: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+    text-align: center;
+    @include transition(all ease-in-out 0.2s);
+}
+.accesibility__text {
+    margin: 8px 5px;
+    font-size: 0.9em;
+    color: $gray6;
+}
+.accesibility__btn__icon {
+    font-size: 1.3em;
+    line-height: 0;
+    padding: 8px;
+    color: $gray6;
+    border: 1px solid $gray5;
+    border-radius: 100%;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $sevenColor;
+        color: $gray1;
+        border: 1px solid $fifthColor;
+    }
+
+}
+.accesibility__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    @include transition(all ease-in-out 0.2s);
+}
+.accesibility__list__item {
+    padding: 0px;
+    cursor: pointer;
+    @include flex;
+    @include transition(all ease-in-out 0.2s);
+    &:hover,
+    &.--active{  
+        background: $gray13;
+        .accesibility__list__item__icon {
+            border: 1px solid $sevenColor;
+            background: $principalColor;
+            color: $gray1;
+        }
+        .accesibility__list__item__text{
+            color: $gray6;
+        }  
+          
+    }
+}
+.accesibility__list__item__icon {
+    padding: 8px;
+    margin: 2px;
+    background: $white;
+    border-radius: 100%;
+    line-height: 0;
+    color: $gray6;
+    font-size: 1.4em;
+    border: 1px solid $gray5;
+    @include transition(all ease-in-out 0.2s);
+}
+.accesibility__list__item__text {
+    display: none;
+    margin: 3px 8px;
+    font-size: 0.9em;
+    @include transition(all ease-in-out 0.2s);
+}
+@media screen and (max-width:1200px){
+    .accesibility {
+        &.--visible{
+            width: 100%;
+            .accesibility__btn{
+                display: initial;
+            }
+            .accesibility__list{
+                width: 100%;
+                @include flex;
+                @include justify-content(flex-end);
+            }
+        }
+    }
+    .accesibility__btn{
+        display: inherit;
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape){
+    .accesibility {
+        &.--visible{
+            .accesibility__list{
+                @include justify-content(center);
+            }
+        }
+    }
+    .accesibility__btn{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .accesibility__btn{
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    .accesibility{
+        &.--visible{
+            .accesibility__list{
+                @include justify-content(center);
+            }            
+        }        
+    }
+    .accesibility__list__item__icon{
+        padding: 6px 8px 7px;
+    }
+}
+
+/// Modo Oscuro
+.--blackboard{
+    .accesibility__list__item__icon{
+        color: $gray1;
+        background: $blackboard2;
+        border: 1px solid $gray6;
+    }
+    .accesibility__list__item{        
+        &:hover{
+            background: $blackboard2;
+        }
+    }
+    .accesibility__btn{
+        background: $blackboard;
+        border: 1px solid $blackboard;
+    }
+    .accesibility__btn__icon{
+          color: $gray1;
+    }
+}

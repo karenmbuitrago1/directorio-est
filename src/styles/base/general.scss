@@ -1,0 +1,38 @@
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background:$white;
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif;
+    scrollbar-base-color: $gray1;
+    scrollbar-face-color: $principalColor;
+    scrollbar-3dlight-color: $gray1;
+    scrollbar-highlight-color: $gray1;
+    scrollbar-track-color: $gray1;
+    scrollbar-arrow-color: $gray2;
+    scrollbar-shadow-color: $gray1;
+    scrollbar-dark-shadow-color: $gray1;
+    &.--blackboard{
+        background:$blackboard;
+        .Geovisor__content{
+            border-top: 1px solid $gray4;
+        }
+    }
+    &.--grayscale{
+        @include filter(grayscale(100%) contrast(1.0))
+    }
+}
+.loader {
+    z-index: 100000;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.Geovisor__content{
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid $gray12;
+}

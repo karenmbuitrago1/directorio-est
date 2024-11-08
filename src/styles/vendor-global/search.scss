@@ -1,0 +1,125 @@
+.searchBox{
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+.searchBox__container{
+    margin: 5px;
+    border-radius: 8px;
+    border:1px solid $gray5;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include transition(all ease-in-out 0.2s);
+}
+.searchBox__title{
+    margin: 5px;
+    font-size: 0.65em;
+    font-weight: 600;
+    color: $gray4;
+    @include transition(all ease-in-out 0.2s);
+}
+.searchBox__input{
+    margin: 10px 5px;
+    border:none;
+    font-size: 0.9em;
+    padding: 0 5px;
+    @include calc(width,'100% - 60px');
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline:none;
+    }
+}
+.searchBox__btn{
+    border: none;
+    color: $gray4;
+    font-size: 1.3em;
+    padding: 0;
+    background: transparent;
+    margin: 8px 0;
+    @include calc(width,'40px');
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline:none;
+    }
+    &:hover{
+        opacity: 0.5;
+    }
+}
+.searchBox__errorMessage{
+    display: none;
+    margin: 8px 5px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: $principalColor;
+    &.--active{
+        display: inherit;
+    }
+}
+.searchBox__answerBox__list{
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: $white;    
+    border:1px solid $gray5;
+    border-radius: 8px;
+    overflow-y: scroll;
+    height: 250px;
+    @include calc(width,'100% - 10px');
+    &.--visible{
+        display: inherit;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.searchBox__answerBox__list__item{
+    background: $white;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-top: 1px solid $gray5;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $gray13;
+    }
+    &:first-of-type{
+        border-top: none;
+    }
+    &.--highlight{
+        background: $principalColor;
+        .searchBox__answerBox__list__item__name{
+            color: $gray1;
+        }
+    }
+}
+.searchBox__answerBox__list__item__name{
+    font-size: 0.7em;
+    color: $gray4;
+    margin: 0;
+}
+.searchBox__answerBox__list__item__bold{
+    font-weight: 900;
+}
+
+.--blackboard {
+    .searchBox__btn{
+        color: $blackboardMagenta;
+    } 
+    .searchBox__input{
+        background: $blackboard5;
+    }
+}

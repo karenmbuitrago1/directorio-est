@@ -1,0 +1,528 @@
+.ShareModal,
+.AboutModal,
+.HelpModal,
+.DownloadModal{
+    z-index: -1000;
+    opacity: 0;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        z-index: 1000;
+        opacity: 1;
+        .Modal__Background{
+            width:100%;
+            height: 100%;
+        }
+        .Modal__Background__container{
+            width: 30%;
+        }
+    }
+}
+.PrintModal{
+    z-index: -1000;
+    opacity: 0;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        z-index: 1000;
+        opacity: 1;
+        .Modal__Background{
+            width:100%;
+            height: 100%;
+        }
+        .Modal__Background__container{
+            width: 60%;
+        }
+    }
+}
+.messageModal{
+    z-index: -1000;
+    opacity: 0;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        z-index: 1000;
+        opacity: 1;
+        .Modal__Background{
+            width:100%;
+            height: 100%;
+        }
+        .Modal__Background__container{
+            width: 20%;
+            margin: 15vh auto;
+        }
+    }
+}
+.--center{
+    text-align: center;
+}
+.Modal{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.Modal__Background{
+    width: 0%;
+    height: 0%;
+    margin: 0 auto;
+    background: $blackTransparency;
+    @include transition(all ease-in-out 0.3s);
+}
+.Modal__Background__container{
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    // height: 100%;
+    margin: 4% auto;
+    background: $white;
+    @include box-shadow( 0px 1px 3px 0px $blackTransparency2);
+    border-radius: 6px;
+    z-index: 3;
+}
+.PrintModal{
+    .Modal__Background__container{
+        height: 90%;
+    }
+}
+.Modal__Background__container__header{
+    position: relative;
+    padding:12px 0;
+    @include flex;
+    @include justify-content(center);
+}
+.Modal__Background__container__header__icon{
+    color:$principalColor;
+    font-size:1.5em;
+    margin: 3px;
+}
+.Modal__Background__container__header__title{
+    text-align: center;
+    margin: 10px;
+    font-weight: 700;
+    color:$gray11;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+.Modal__Background__container__header__exit{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+        }
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.Modal__Background__container__body{
+    padding: 0 15px;
+    overflow-y: auto;
+    max-height: calc(100% - 142px);
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.Modal__Background__container__body__title{
+    text-align: center;
+    margin: 3px auto;
+    width: 80%;
+    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.Modal__Background__container__body__textArea{
+    width: 98%;
+    height: 50px;
+    border-radius: 12px;
+    border:1px solid $gray7;
+    font-size: 0.8em;
+    padding: 5px;
+    color: $gray11;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+        border:1px solid $gray8;
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.Modal__Background__container__footer{
+    position: relative;
+    padding: 12px 0;
+    @include flex;
+    @include justify-content(center);
+    .Modal__Background__container__body__DownloadList__button{
+        width: 200px;
+    }
+}
+.Modal__Background__container__body__tabContainer{
+    padding: 0 10px;
+}
+.HelpModal__ListTab{
+    list-style: none;
+    margin: 0;
+    padding:0;
+    border-bottom: 1px solid $gray9;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(start);
+}
+.HelpModal__ListTabItem{
+    margin: 5px 5px 0;
+    padding: 5px 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border:1px solid $gray9;
+    border-bottom: none;
+    background: $white;
+    cursor: pointer;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &.--active{
+        border:1px solid $sixColor;
+        background: $sixColor;
+        .HelpModal__ListTabItem__icon{
+            color: $white;
+        }
+        .HelpModal__ListTabItem__text{
+            color: $white;
+        }
+    }
+    &:hover{
+        background: $fifthColor;
+        .HelpModal__ListTabItem__icon{
+            color: $white;
+        }
+        .HelpModal__ListTabItem__text{
+            color: $white;
+        }
+    }
+}
+.HelpModal__ListTabItem__icon{
+    font-size: 1.4em;
+    color:$gray6;
+    line-height: 0;
+    @include transition(all ease-in-out 0.2s);
+}
+.HelpModal__ListTabItem__text{
+    margin: 2px;
+    font-size: 1em;
+    color:$gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.HelpModal__ListTabContent{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+.HelpModal__ListTabContentItem{
+    display: none;
+    &.--active{
+        display: inherit;
+    }
+}
+.Modal__Background__container__body__shareList{
+    list-style: none;
+    margin: 0;
+    padding: 10px 0 30px 0;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+}
+.Modal__Background__container__body__shareList__item{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.Modal__Background__container__body__text{
+    margin: 15px 10px 20px 10px;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: $gray6;
+}
+.Modal__Background__container__body__shareList__item__icon{
+    background: $white;
+    border:1px solid $gray7;
+    border-radius: 4px;
+    padding: 3px 6px;
+    color: $gray8;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    line-height: 0;
+    text-decoration: none;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $principalColor;
+        border: 1px solid $sixColor;
+        border-radius: 12px;
+        color: $white;
+        @include box-shadow(1px 1px 3px $sixColor); 
+    }
+}
+.Modal__Background__container__body__AboutDownloadList{
+    list-style: none;
+    padding: 0 0 5% 0;
+    margin: 5px auto;
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.Modal__Background__container__body__AboutDownloadList__item{
+    width: 100%;
+    margin: 5px 0;
+}
+.Modal__Background__container__body__AboutDownloadList__item__link{
+    text-decoration: none;
+    color: $gray8;
+    @include flex;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        color: $gray4;
+        .Modal__Background__container__body__AboutDownloadList__item__link__icon{
+            color: $alternativeColor005;
+        }
+        .Modal__Background__container__body__AboutDownloadList__item__link__name{
+            opacity: 0.7;
+        }
+    }
+}
+.Modal__Background__container__body__AboutDownloadList__item__link__icon{
+    line-height: 1.5;
+    font-size: 1.4em;
+    margin: 0 8px;
+    text-align: center;
+    color: $alternativeColor007;
+    @include transition(all ease-in-out 0.2s);
+}
+.Modal__Background__container__body__AboutDownloadList__item__link__name{
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: $gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+.Modal__Background__container__body__DownloadList{
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+}
+.Modal__Background__container__body__DownloadList__item{
+    margin: 3px;
+    width: 100px;
+    height: 80px;
+}
+.Modal__Background__container__body__DownloadList__button{
+    background: $white;
+    border:1px solid $gray10;
+    border-radius: 6px;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        background: $principalColor;
+        border: 1px solid $sixColor;
+        border-radius: 12px;
+        @include box-shadow(1px 1px 3px $sixColor);
+        .Modal__Background__container__body__DownloadList__item__extension{
+            color:$white;
+        }
+        .Modal__Background__container__body__DownloadList__item__text{
+            color:$white;        
+        }
+    }
+}
+.Modal__Background__container__body__DownloadList__item__extension{
+    margin: 0;
+    color: $principalColor;
+    font-size: 1em;
+    font-weight: 500;
+    @include transition(all ease-in-out 0.2s);
+}
+.Modal__Background__container__body__DownloadList__item__text{
+    margin: 3px 0;
+    font-size: 0.7em;
+    color:$gray6;
+    @include transition(all ease-in-out 0.2s);
+}
+
+.Modal__Background__container__body__HelpList__item{
+    margin: 0 20px;
+    width: 90%;
+}
+
+.Modal__panel__graphs,
+.Modal__panel__dona,
+.Modal__panel__participacion,
+.Modal__panel__historico,
+.Modal__panel__frequency{
+    width: 100%;
+}
+
+.Modal__panel__graphs,
+.Modal__panel__dona,
+.Modal__panel__participacion,
+.Modal__panel__historico,
+.Modal__panel__frequency{
+    g{
+        .arc{
+            stroke: $white;
+            stroke-width: 1.5px;
+        }
+        .arctext{
+            fill: $black;
+            font-size: 1.4em;
+        }
+        .polytext{
+            opacity: .3;
+            stroke: $black;
+            stroke-width: 2px;
+            fill: none;
+        }
+        text{            
+            font-size: 0.8rem;
+        }
+    } 
+}
+@media screen and (max-width:1900px){
+    .ShareModal,
+    .HelpModal,
+    .AboutModal{
+        &.--visible{
+            .Modal__Background__container{
+                width:30%;
+            }
+        }
+    }
+}
+@media screen and (max-width:1400px){
+    .ShareModal,
+    .HelpModal,
+    .AboutModal{
+        &.--visible{
+            .Modal__Background__container{
+                width:50%;
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .ShareModal,
+    .HelpModal,
+    .AboutModal{
+        &.--visible{
+            .Modal__Background__container{
+                width:50%;
+            }
+        }
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape){
+    .ShareModal,
+    .HelpModal,
+    .AboutModal{
+        &.--visible{
+            .Modal__Background__container{
+                width:50%;
+            }
+        }
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .ShareModal,
+    .HelpModal,
+    .AboutModal{
+        &.--visible{
+            .Modal__Background__container{
+                width:85%;
+            }
+        }
+    }
+    .Modal__Background__container__body__AboutDownloadList__item{
+        width: 100%;
+    }
+}
+
+/// Modo Oscuro
+
+.--blackboard{
+    .Modal__Background{
+        background: $blackboard6;
+    }
+    .Modal__Background__container{
+        background: $blackboard2;
+        border: 1px solid $gray4;
+    }
+    .Modal__Background__container__header__title{
+        color: $gray1;
+    }
+    .Modal__Background__container__header__exit{
+        &:after,
+        &:before{
+            background: $blackboardMagenta;
+        }
+    }
+    .Modal__Background__container__body__text{
+        color: $gray1;
+    }
+    .Modal__Background__container__body__AboutDownloadList__item__link__name{
+        color: $gray1;
+    }
+}

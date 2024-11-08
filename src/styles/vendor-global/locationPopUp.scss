@@ -1,0 +1,67 @@
+.map__location{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 40;
+    background: $white;
+    color: $gray11;
+    border: 1px solid $gray7;
+    border-radius: 4px;
+    display: none;
+}
+.map__location__container{
+    padding: 10px 30px;
+    position: relative;
+}
+.map__location__container__close{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+        }
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        top: 10px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 10px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.map__location__container__info{
+    margin:0 0 10px 0;
+}
+.map__location__container__info__name{
+    margin:3px 0;
+    font-size:0.7em;
+    font-weight: 600;
+    color:$gray11;
+}
+.map__location__container__info__value{
+    margin:3px 0;
+    font-size:0.7em;
+    color:$gray11;
+}

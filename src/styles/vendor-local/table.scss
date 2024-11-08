@@ -1,0 +1,488 @@
+.--blackboard{
+    .Geovisor__tableBox{
+        background: $blackboard2;
+        border-top:1px solid $gray4;
+    }
+    .Geovisor__tableBox__top__tableName{
+        color: $gray1;
+        font-weight: 400;
+    }
+    .Geovisor__tableBox__top__close{
+        &:after,
+        &:before{
+            background: $gray1;
+        }
+    }
+    .Geovisor__tableBox__top__header__actionTable__searchTable__button{
+        color: $sevenColor;
+        &:hover{
+            color: $blackboardMagenta;
+        }
+    }
+    .Geovisor__tableBox__top__header__actionTable__searchTable__input{
+        border: 1px solid $gray6;
+        background: $blackboard4;
+        color: $gray1;
+        &:focus{
+            border: 1px solid $gray7; 
+        }
+        &::placeholder {
+            color: $gray2;
+            opacity: 1;
+        }
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity{
+        color: $gray1;
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity__select{
+        border: 1px solid $gray6;
+        background: $blackboard4;
+        color: $gray1;
+        &:focus{
+            border: 1px solid $gray7; 
+        }
+        &::placeholder {
+            color: $gray2;
+            opacity: 1;
+        }
+    }
+    .Geovisor__tableBox__top__actionTable__export__button{
+        background: transparent;
+        border: 1px solid $blackboardMagenta;
+        color: $gray1;
+        &:hover{
+            background: $blackboard4;
+        }
+    }
+    .Geovisor__tableBox__thead{
+        background: $blackboard4;
+    }
+    .Geovisor__tableBox__th {
+        border: 1px solid $gray6;
+    }
+    .Geovisor__tableBox__th__link{
+        color: $gray1;
+        &:hover{
+            color: $blackboardMagenta;
+            &:after{
+                color: $blackboardMagenta;
+            }
+        }
+        &:after{
+            color: $gray4;
+        }
+    }
+    .Geovisor__tableBox__tbody__td{
+        border: 1px solid $gray6;
+        color: $gray7;
+    }
+    .Geovisor__tableBox__tableContainer__overflow{
+        &::-webkit-scrollbar-track {
+            background: $blackboard4; 
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $fifthColor;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $sixColor; 
+        }
+    }
+    .Geovisor__tableBox__top__actionTable__totalResults__text{
+        color: $gray8;
+    }
+    .Geovisor__tableBox__top__header__actionTable__totalResults__value{
+        color: $white;
+    }
+    .Geovisor__tableBox__table__pager__text{
+        color: $gray1;
+    }
+    .Geovisor__tableBox__table__pager__list__item__link{
+        color: $gray8;
+        &:hover{
+            color: $white;
+        }
+    }
+    .dynatable-active-page {
+        background: $blackboardMagenta;
+        color: $gray1;
+    }
+    .dynatable-page-break{
+        color: $gray1;
+    }
+}
+.Geovisor__tableBox{
+    display: none;
+    background: $white;
+    padding:0 15px 15px 15px;
+    border-top:1px solid $gray12;
+    @include transition(all ease-in-out 0.2s);
+    &.--visible{
+        display: inherit;
+    }
+    .table{
+        border-radius: 4px;
+    }
+}
+.Geovisor__tableBox__top{
+    position: relative;
+    @include flex;
+    @include justify-content(space-between);
+}
+.Geovisor__tableBox__top__tableName{
+    font-weight: 500;
+    color: $gray4;
+    margin: 10px 0;
+    font-size:1em;
+}
+.Geovisor__tableBox__top__close{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+    &:hover{
+        &:after,
+        &:before{
+            @include transform(rotate(0deg));
+        }
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-radius: 1px;
+        background: $gray8;
+        @include transform(rotate(-45deg));
+        @include transition(all ease-in-out 0.2s);
+    }
+}
+.Geovisor__tableBox__top__actionTable{
+    padding: 5px 0;
+    width: 100%;
+    @include flex;
+    @include flex-wrap(wrap);
+    @include justify-content(space-around);
+}
+.Geovisor__tableBox__top__actionTable__totalResults__text{
+    margin:10px 0;
+    font-size: 0.9em;
+    color: $gray8;
+    width: 20%;
+    @include order(5);
+}
+.Geovisor__tableBox__top__header__actionTable__totalResults__value{
+    font-weight: 600;
+    color: $gray11,
+}
+.Geovisor__tableBox__top__actionTable__export{
+    width: 10%;
+    margin: 10px 0;
+    @include order(3);
+}
+.Geovisor__tableBox__top__actionTable__export__button{
+    background: $white;
+    border:1px solid $gray7;
+    color: $gray4;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 0.9em;
+    line-height: 0.8;
+    padding: 8px 10px;
+    @include flex;
+    @include justify-content(center);
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background:$fifthColor;
+        border-radius: 8px;
+        color: $gray3;
+    }
+    &:focus{
+        outline: $gray3 auto 0px;
+        border: 1px solid $fifthColor;
+    }
+}
+.Geovisor__tableBox__top__actionTable__export__button__name{
+    margin: 0 10px;
+}
+.Geovisor__tableBox__top__actionTable__selectQuantity{
+    width: 8%;
+    margin:10px;
+    font-size: 0.9em;
+    color: $gray4;
+    @include order(2);
+}
+.Geovisor__tableBox__top__actionTable__selectQuantity__text{
+    margin: 0 5px;
+}
+.Geovisor__tableBox__top__actionTable__selectQuantity__select{
+    width:60px;
+    height: 30px;
+    margin:0;
+    font-size: 0.9em;
+    background: transparent;
+    border: 1px solid $gray9; 
+    border-radius: 4px;
+    color: $gray4;
+    font-weight: 600;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 1px solid $gray8; 
+    }
+    &:hover{
+
+    }
+}
+.Geovisor__tableBox__top__header__actionTable__searchTable{
+    width: 80%;
+    margin: 5px 0 0 0;
+    position: relative;
+}
+.Geovisor__tableBox__top__header__actionTable__searchTable__input{
+    width:200px;
+    height: 30px;
+    margin:0;
+    padding: 0 5px;
+    font-size: 0.9em;
+    background: transparent;
+    border: 1px solid $gray9; 
+    border-radius: 4px;
+    color: $gray4;
+    font-weight: 400;
+    @include order(1);
+    &:focus{
+        outline: $gray7 auto 0px;
+        border: 1px solid $gray8; 
+    }
+}
+.Geovisor__tableBox__top__header__actionTable__searchTable__button{
+    position: absolute;
+    left: 180px;
+    height: 32px;
+    top:0;
+    background: transparent;
+    border: transparent;
+    font-size: 1.45em;
+    line-height: 1.5;
+    color:$gray6;
+    @include transition(all ease-in-out 0.2s);
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        color:$secondaryColor;
+    }
+}
+.Geovisor__tableBox__tableContainer{
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.Geovisor__tableBox__tableContainer__overflow{
+    width: 100%;
+    border-radius: 6px;
+    overflow-x: scroll;
+    @include order(4);
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $fifthColor;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $sixColor; 
+    }
+}
+.Geovisor__tableBox__tableContainer__table{
+    width: 100%;
+}
+.Geovisor__tableBox__thead{
+    background: $gray1;
+    padding: 5px;    
+}
+.Geovisor__tableBox__th{
+    position: relative;
+    padding: 8px 15px 8px 5px;
+    border: 1px solid $gray7;
+}
+.dynatable-arrow{
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    font-size: 0.8em;
+    z-index: 2;
+}
+.Geovisor__tableBox__th__link{
+    font-size:0.9em;
+    color: $gray11;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    &:hover{
+        color: $gray11;
+    }
+    &:after{
+        content: '▼';
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        font-size: 0.8em;
+        color:$gray10;
+    }
+}
+.Geovisor__tableBox__tbody__td{
+    font-size: 0.8em;
+    border: 1px solid $gray12;
+    padding:8px 3px;
+    margin: 0;
+    line-height: 1;
+    &.--center{
+        text-align: center;
+    }
+    &.--right{
+        text-align: right;
+    }
+    &.--left{
+        text-align: left;
+    }
+}
+.Geovisor__tableBox__table__pager__text{
+    font-size: 0.9em;
+    color: $gray8;
+}
+.Geovisor__tableBox__table__pager__list{
+    width: 80%;
+    list-style: none;
+    margin:10px 0;
+    padding: 0;
+    @include flex;
+    @include justify-content(flex-end);
+    @include order(6);
+}
+.Geovisor__tableBox__table__pager__list__item{
+    margin:0 5px;
+    line-height: 1;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        .Geovisor__tableBox__table__pager__list__item__link{
+            font-weight: 600;
+        }
+    }
+}
+.Geovisor__tableBox__table__pager__list__item__link{
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0;
+    color: $fifthColor;
+    cursor: pointer;
+    @include transition(all ease-in-out 0.2s);
+}
+.dynatable-active-page{
+    background: $fifthColor;
+    border-radius: 4px;
+    color:$gray1;
+    padding: 5px 6px 5px 6px;
+    margin: -5px 0 0 0;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        background: $principalColor;
+    }
+}
+@media screen and (max-width:1500px){
+    .Geovisor__tableBox__top__header__actionTable__searchTable{
+        width: 73%;
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity {
+        width: 10%;
+    }
+    .Geovisor__tableBox__top__actionTable__export {
+        width: 15%;
+    }
+}
+@media screen and (max-width:1400px){
+    .Geovisor__tableBox__top__header__actionTable__searchTable{
+        width: 63%;
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity {
+        width:13%;
+    }
+    .Geovisor__tableBox__top__actionTable__export {
+        width: 22%;
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape){
+    .Geovisor__tableBox__top__header__actionTable__searchTable{
+        width: 55%;
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity {
+        width:16%;
+    }
+    .Geovisor__tableBox__top__actionTable__export {
+        width: 23%;
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .Geovisor__tableBox{
+        padding: 0 5px 15px 5px;
+    }
+    .Geovisor__tableBox__top__header__actionTable__searchTable{
+        width:65%;
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity {
+        width:33%;
+        margin: 5px 0;
+    }
+    .Geovisor__tableBox__top__actionTable__export {
+        width:100%;
+        margin: 7px 0;
+    }
+    .Geovisor__tableBox__top__tableName{
+        margin: 5px 0;
+    }
+    .Geovisor__tableBox__top__close {
+        top: 10px;
+        right: 5px;
+    }
+    .Geovisor__tableBox__top__actionTable__totalResults__text{
+        width: 100%;
+        text-align: center;
+    }
+    .Geovisor__tableBox__table__pager__list{
+        width: 100%;
+        @include justify-content(center);
+    }
+}
+@media screen and (max-width:$sizeSmallPhone){
+    .Geovisor__tableBox__top__header__actionTable__searchTable {
+        width:100%;
+    }
+    .Geovisor__tableBox__top__header__actionTable__searchTable__input{
+        width:95%;
+    }
+    .Geovisor__tableBox__top__header__actionTable__searchTable__button{
+        @include calc(left,'95% - 20px');
+    }
+    .Geovisor__tableBox__top__actionTable__selectQuantity {
+        width: 100%;
+    }
+}

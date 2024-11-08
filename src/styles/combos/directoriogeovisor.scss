@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*============================================================================
+  Geovisor - DIRECTORIO | Contenido geovisor
+==============================================================================*/
+/*================ BASE ================*/
+@import "../base/variables";
+@import "../base/mixins";
+@import "../base/normalize";
+@import "../base/general";
+
+
+/*================ GLOBAL MODULES ================*/
+@import "../modules-global/header";
+@import "../modules-global/footer";
+
+
+/*================ VENDOR GLOBAL ================*/
+@import "../vendor-global/tutorial";
+@import "../vendor-global/actionBar";
+@import "../vendor-global/toolBar";
+@import "../vendor-global/accesibility";
+@import "../vendor-global/filter";
+@import "../vendor-global/filter2";
+@import "../vendor-global/search";
+@import "../vendor-global/3d";
+@import "../vendor-global/palette";
+@import "../vendor-global/measure";
+@import "../vendor-global/locationPopUp";
+@import "../vendor-global/tutorialMeasure";
+@import "../vendor-global/printMap";
+
+
+/*================ VENDOR LOCAL ================*/
+@import "../vendor-local/map";
+@import "../vendor-local/over-map";
+@import "../vendor-local/table";
+@import "../vendor-local/modals";
+@import "../vendor-local/results";

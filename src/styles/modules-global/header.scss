@@ -1,0 +1,354 @@
+.--blackboard{
+    .Header{
+        background: $blackboard;
+    }
+    .DANE__Geovisor__icon__logoDANE__01{
+        .path1,
+        .path2,
+        .path3,
+        .path4{
+            &:before {
+                color: $blackboardMagenta;
+            }
+        }
+        .path5,
+        .path6,
+        .path7,
+        .path8,
+        .path9,
+        .path10,
+        .path11,
+        .path12,
+        .path13,
+        .path14,
+        .path15,
+        .path16,
+        .path17,
+        .path18,
+        .path19,
+        .path20,
+        .path21,
+        .path22,
+        .path23,
+        .path24{
+            &:before {
+                color: $white;
+            }
+        }
+    }
+    .Header__menuSpan{
+        background: $gray13;
+    }
+    .DANE__Geovisor__icon__logoGeoportal{
+        .path1,
+        .path2,
+        .path3{
+            &:before {
+                color: $white;
+            }
+        }
+        .path5{
+            &:before {
+                color:#ef296c;
+            }
+        }
+        .path6{
+            &:before {
+                color:$thirdColor;
+            }
+        }
+        .path7{
+            &:before {
+                color:#e2004b;
+            }
+        }
+        .path8,
+        .path9,
+        .path10{
+            &:before {
+                color:#ef296c;
+            }
+        }
+        .path11,
+        .path12,
+        .path13,
+        .path14,
+        .path15,
+        .path16{
+            &:before {
+                color: $white;
+            }
+        }
+    }
+    .Header__container__textBox__title{
+        color: $gray1;
+    }
+    .Header__container__user__icon{
+        background: $alternativeColor002;
+    }
+    .Header__container__user__info__user,
+    .Header__container__user__info__rol{
+        color: $gray13;
+    }
+    .Header__container__btnBox__btnEnd{
+        background: $blackboard;
+        border:1px solid $alternativeColor002;
+        @include box-shadow(1px 2px 4px -1px $alternativeColor002);
+        &:hover{
+            background:$alternativeColor002;
+        }
+    }
+    .Header__container__btnBox__btnEnd__text{
+        color: $gray1;
+    }
+    .Header__container__textBox__place{
+        color: $gray13;
+    }
+}
+.Header{
+    background: $white;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.Header__menu{
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    position: relative;
+    &.--active{
+        .Header__menuSpan{
+            &:nth-child(1){
+                top: 12px;
+                @include transform(rotate(45deg));
+            }
+            &:nth-child(2){
+                @include transform(rotateY(90deg));
+            }
+            &:nth-child(3){
+                top: 12px;
+                @include transform(rotate(-45deg));
+            }
+            
+            
+        }
+    }
+}
+.Header__menuSpan{
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+    background: $gray4;
+    @include transition(all ease-in-out 0.2s);
+    &:nth-child(1){
+        top: 12px;
+        @include transform(rotate(0deg));
+    }
+    &:nth-child(2){
+        //top: 12px;
+        @include transform(rotate(0deg));
+    }
+    &:nth-child(3){
+        top: 20px;
+        @include transform(rotate(0deg));
+    }
+}
+.Header__container{
+    padding:5px 10px;
+    max-width: 100%;  
+    @include flex;
+    @include justify-content(flex-start);
+    @include flex-wrap(wrap);
+}
+.Header__container__logo{
+    width: 88px;
+    height: 40px;
+    margin: 0 8px;
+}
+.Header__container__logo__link{
+    text-decoration: none;
+    @include transition(all ease-in-out 0.2s);
+    &:hover{
+        @include filter(grayscale(20%));
+    }
+    .DANE__Geovisor__icon__logoDANE__01{
+        font-size:2.3em;
+        line-height: 1;
+        @include transition(all ease-in-out 0.2s);
+    }   
+}
+.Header__container__geoportal{
+    font-size: 2.3em;
+    margin:0px;
+    line-height: 0px;
+    width: 100px;
+}
+.Header__container__geoportal__link{
+    text-decoration: none;
+    @include transition(all ease-in-out 0.5s);
+    &:hover{
+        opacity: 0.8;;
+    }
+}
+.Header__container__textBox{
+    @include calc(width,'95% - 350px');
+    @include flex;
+    @include flex-wrap(wrap);
+}
+.Header__container__textBox__title{
+    margin: 6px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size:1em;
+    color:$gray11;
+    letter-spacing: -1px;
+}
+.Header__container__textBox__place{
+    margin:5px 0;
+    padding: 0 0 0 10px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    color:$gray11;
+    letter-spacing: -1px;
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        background: $principalColor;
+        top: 0px;
+        left: 0;
+        width: 2px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:1300px){
+    .Header__container__textBox{
+        @include calc(width,'100% - 520px');
+    }
+    .Header__container__textBox__place{
+        &:before{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .Header__container__accesibility {
+        &.--visible{
+            width: 100%;
+            .Header__container__accesibility__btn{
+                display: initial;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+            .Header__container__accesibility__list{
+                width: 100%;
+                @include flex;
+                @include justify-content(flex-end);
+            }
+        }
+    }
+    .Header__container__accesibility__btn{
+        display: inherit;
+    }
+    .Header__container{
+        @include justify-content(flex-start)
+    }
+    .Header__container__textBox__title{
+        margin: 6px 10px 6px 0;
+    }
+    .Header__container__textBox__place{
+        display: none;
+    }
+}
+@media screen and (max-width:$sizeTabletLandScape) {
+    .Header{
+        height: auto;
+    }
+    .Header__container{
+        margin:5px 10px 5px 10px;
+        padding: 0;
+        @include justify-content(flex-start)
+    }
+    .Header__menu{
+        display: inherit;
+    }
+    .Header__container__logo{
+        overflow: hidden;
+        height: 20px;
+        width: 22px;
+        padding: 6px 0px 3px 6px;
+        margin: 0 10px;
+        background: $principalColor;
+        border-radius: 100%;
+        position: relative;
+    }
+    .Header__container__logo__link{
+        .DANE__Geovisor__icon__logoDANE__01{
+            font-size: 1.4em;
+            span{
+                display: none;
+                &.path3{                    
+                    display: inherit;
+                    left: 10px;
+                    top: 12px;
+                    &:before{
+                        color: $white;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .Header__container__geoportal{
+         font-size: 1.9em;
+         line-height: initial;
+         width: 85px;
+    }
+    .Header__container__textBox__title{
+        font-size: 0.9em;
+        margin: 5px;
+        line-height: initial;
+    }
+    .Header__container__textBox__place{
+        font-size: 0.9em;
+        border-left: none;
+        &:before{
+            top: 0;
+        }
+    }
+}
+@media screen and (max-width:$sizePhone){
+    .Header__container {
+        margin: 5px 10px;
+    }
+    .Header__container__geoportal{
+        margin: 2px 5px 2px 0;
+        font-size: 1.5em;
+        width: 60px;
+    }
+    .Header__container__textBox{
+        @include calc(width,'100%')
+    }
+    .Header__container__textBox__place {
+        width: 100%;
+        font-size: 0.9em;
+       display: none;
+    }
+    .Header__container__accesibility__btn{
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    .Header__container__accesibility{
+        &.--visible{
+            .Header__container__accesibility__list{
+                @include justify-content(center);
+            }            
+        }        
+    }
+}
