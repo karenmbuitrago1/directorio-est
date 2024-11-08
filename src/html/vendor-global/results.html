@@ -1,23 +1,49 @@
-<div class="results --collapse" id="results">
-    <div class="results__collapseBtn">
-        <div class="results__collapseBtn__triangle"></div>
+<div
+  class="results --collapse"
+  id="results"
+>
+  <div class="results__collapseBtn">
+    <div class="results__collapseBtn__triangle"></div>
+  </div>
+  <div
+    class="results__resize"
+    id="results__resize"
+  ></div>
+  <div class="results__panel">
+    <div class="results__panel__title">
+      <h2
+        class="results__panel__title__theme"
+        id="results__panel__title__theme"
+      >
+        Tema
+      </h2>
+      <h3
+        class="results__panel__title__subtheme"
+        id="results__panel__title__subtheme"
+      >
+        Subtema
+      </h3>
+      <h4
+        class="results__panel__title__location"
+        id="results__panel__title__site"
+      >
+        Todos los departamentos
+      </h4>
+      <!-- <h5 class="results__panel__title__themeName" id="results__panel__title__themeName"></h5> -->
     </div>
-    <div class="results__resize" id="results__resize"></div>
-    <div class="results__panel">
-        <div class="results__panel__title">
-            <h2 class="results__panel__title__theme" id ="results__panel__title__theme">Tema </h2>
-            <h3 class="results__panel__title__subtheme" id ="results__panel__title__subtheme" >Subtema </h3>
-            <h4 class="results__panel__title__location" id="results__panel__title__site">Todos los departamentos </h4>
-            <!-- <h5 class="results__panel__title__themeName" id="results__panel__title__themeName"></h5> -->
-        </div> 
-        <button class="functionFilter__accordion__btn --active" title="Información general" name="general" id="totalresults">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__List"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Información General</p>
-        </button>
-        <div class="functionFilter__accordion__panel --open">
-            <!-- <div class="results__panel__total__data">
+    <button
+      class="functionFilter__accordion__btn --active"
+      title="Información general"
+      name="general"
+      id="totalresults"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__List"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">Información General</p>
+    </button>
+    <div class="functionFilter__accordion__panel --open">
+      <!-- <div class="results__panel__total__data">
                 <div class="results__panel__total__data__list__icon">
                     <span class="DANE__Geovisor__icon__economy"></span>
                 </div>
@@ -25,119 +51,204 @@
                 <span class="results__panel__total__data__actividades"></span>
             </div> -->
 
-            <div class="results__panel__total__data">
-                <div class="results__panel__total__data__list__icon">
-                    <span class="DANE__Geovisor__icon__town"></span>
-                </div>
-                <h5 class="results__panel__total__data__name">Total Empresas en Colombia</h5>
-                <p class="results__panel__total__data__empresas"></p>
-            </div>
-            <div class="results__panel___update">
-                <p class="results__panel__total__data__update" >Última Actualización 14 de mayo del 2024</p>  
-                <p class="results__panel__total__data__update" >Nota Técnica: Base de datos de Empresas con naturaleza jurídica activas a la fecha de referencia. Se excluyen los tipos de documento especiales, con el fin de garantizar la reserva estadística de los datos.</p>  
-            </div>
+      <div class="results__panel__total__data">
+        <div class="results__panel__total__data__list__icon">
+          <span class="DANE__Geovisor__icon__town"></span>
         </div>
-
-        
-        <button class="functionFilter__accordion__btn --active" name="Leyenda" title="Leyenda">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__layers"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Leyenda</p>
-        </button>
-        <div class="functionFilter__accordion__panel --open">
-            <p class="results__panel__title__variable"></p>
-            <p class="results__panel__subtitle__themeName unidad"></p>
-             <!-- <p class="results__panel__subtitle__themeName unidad"></p> -->
-            <ul class="map__legend__list"></ul>
-            <p class="results__panel__title__location legendClasi"></p>
-            <p class="results__panel__title__site">Transparencia del mapa</p>
-            <div class="map__transparency">
-                <div class="map__transparency__slideTrans">
-                    <p class="map__transparency__slideTrans__textValue">0%</p>
-                    <div class="map__transparency__slideTrans__scrollBar">
-                        <button class="map__transparency__slideTrans__scrollBtn"></button>
-                    </div>
-                    <p class="map__transparency__slideTrans__textValue">100%</p>
-                </div>
-                <div class="map__legend">
-                    <canvas id="canvasLeyenda" style="display: none;"></canvas>
-                </div>
-            </div>
-        </div>
-        
-        <button class="functionFilter__accordion__btn --active" name="Símbolos" title="Símbolos" id="PanelBtn__symbol">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__radioButton"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Símbolos</p>
-        </button>
-        <div class="functionFilter__accordion__panel --open">
-            <div class="map__legend__symbol">
-                <canvas id="map__legend__symbol" style="display: none;"></canvas>
-            </div>
-        </div>       
-
-        <button class="functionFilter__accordion__btn --active" title="Resultado temático" name="temático" id="results_tematico">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__List"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Resultado temático</p>
-        </button>
-        <div class="functionFilter__accordion__panel --open">
-            <div class="results__panel__selectGraph">
-                <p class="results__panel__selectGraph__text">Tipo de gráfica:</p>
-                <div class="results__panel__selectGraph__triangle"></div>
-                    <ul class="results__panel__selectGraph__principalList">                  
-                        <li class="results__panel__selectGraph__principalList__item --active" id="selectGraphs__bars_v">
-                            <button class="results__panel__selectGraph__principalList__item__button" title="Barras horizontales" name="horizontales">
-                                <div class="results__panel__selectGraph__principalList__item__button__icon">
-                                    <span class="DANE__Geovisor__icon__graphBarVertical"></span>
-                                </div>
-                                <p class="results__panel__selectGraph__principalList__item__button__name">Barras horizontales</p>
-                            </button>
-                        </li>
-                        <li class="results__panel__selectGraph__principalList__item " id="selectGraphs__bars">
-                            <button class="results__panel__selectGraph__principalList__item__button " title="Barras verticales" name="verticales">
-                                <div class="results__panel__selectGraph__principalList__item__button__icon">
-                                    <span class="DANE__Geovisor__icon__graph"></span>
-                                </div>
-                                <p class="results__panel__selectGraph__principalList__item__button__name">Barras verticales</p>
-                            </button>
-                        </li>
-                        
-                        <li class="results__panel__selectGraph__principalList__item" id="selectGraphs__value">
-                            <button class="results__panel__selectGraph__principalList__item__button ">
-                                <div class="results__panel__selectGraph__principalList__item__button__icon">
-                                    <span class="DANE__Geovisor__icon__pencil"></span>
-                                </div>
-                                <p class="results__panel__selectGraph__principalList__item__button__name">Valor</p>
-                            </button>
-                        </li>                  
-                    </ul>
-            </div>
-            <div class="results__panel__graphs"></div>
-        </div>
-        <button class="functionFilter__accordion__btn" id="results_entidad" name="distribución" title="Distribución de las empresas">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__List"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Participación ente territorial</p>
-        </button>
-        <div class="functionFilter__accordion__panel">
-            <div class="results__panel__participacion"></div>
-        </div>
-        <button class="functionFilter__accordion__btn" id="results_frecuencia" title="Frecuencia" name="Frecuencia">
-            <div class="functionFilter__accordion__btn__icon">
-                <span class="DANE__Geovisor__icon__List"></span>
-            </div>
-            <p class="functionFilter__accordion__btn__name">Frecuencia</p>
-        </button>
-        <div class="functionFilter__accordion__panel">
-            <div class="results__panel__frequency"></div>
-        </div>        
-        <div class="results__panel__source">
-            <p class="results__panel__source__name__link">Fuente: <a href="https://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-informacion/registro-estadistico-de-empresas" target="_blank" class="map__source__link">Directorio de Empresas</a></p>
-        </div>
+        <h5 class="results__panel__total__data__name">
+          Total Empresas en Colombia
+        </h5>
+        <p class="results__panel__total__data__empresas"></p>
+      </div>
+      <div class="results__panel___update">
+        <p class="results__panel__total__data__update">
+          Última Actualización 30 de octubre del 2024
+        </p>
+        <p class="results__panel__total__data__update">
+          Nota Técnica: Base de datos de Empresas con naturaleza jurídica
+          activas a la fecha de referencia. Se excluyen los tipos de documento
+          especiales, con el fin de garantizar la reserva estadística de los
+          datos.
+        </p>
+      </div>
     </div>
+
+    <button
+      class="functionFilter__accordion__btn --active"
+      name="Leyenda"
+      title="Leyenda"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__layers"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">Leyenda</p>
+    </button>
+    <div class="functionFilter__accordion__panel --open">
+      <p class="results__panel__title__variable"></p>
+      <p class="results__panel__subtitle__themeName unidad"></p>
+      <!-- <p class="results__panel__subtitle__themeName unidad"></p> -->
+      <ul class="map__legend__list"></ul>
+      <p class="results__panel__title__location legendClasi"></p>
+      <p class="results__panel__title__site">Transparencia del mapa</p>
+      <div class="map__transparency">
+        <div class="map__transparency__slideTrans">
+          <p class="map__transparency__slideTrans__textValue">0%</p>
+          <div class="map__transparency__slideTrans__scrollBar">
+            <button class="map__transparency__slideTrans__scrollBtn"></button>
+          </div>
+          <p class="map__transparency__slideTrans__textValue">100%</p>
+        </div>
+        <div class="map__legend">
+          <canvas
+            id="canvasLeyenda"
+            style="display: none"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="functionFilter__accordion__btn --active"
+      name="Símbolos"
+      title="Símbolos"
+      id="PanelBtn__symbol"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__radioButton"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">Símbolos</p>
+    </button>
+    <div class="functionFilter__accordion__panel --open">
+      <div class="map__legend__symbol">
+        <canvas
+          id="map__legend__symbol"
+          style="display: none"
+        ></canvas>
+      </div>
+    </div>
+
+    <button
+      class="functionFilter__accordion__btn --active"
+      title="Resultado temático"
+      name="temático"
+      id="results_tematico"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__List"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">Resultado temático</p>
+    </button>
+    <div class="functionFilter__accordion__panel --open">
+      <div class="results__panel__selectGraph">
+        <p class="results__panel__selectGraph__text">Tipo de gráfica:</p>
+        <div class="results__panel__selectGraph__triangle"></div>
+        <ul class="results__panel__selectGraph__principalList">
+          <li
+            class="results__panel__selectGraph__principalList__item --active"
+            id="selectGraphs__bars_v"
+          >
+            <button
+              class="results__panel__selectGraph__principalList__item__button"
+              title="Barras horizontales"
+              name="horizontales"
+            >
+              <div
+                class="results__panel__selectGraph__principalList__item__button__icon"
+              >
+                <span class="DANE__Geovisor__icon__graphBarVertical"></span>
+              </div>
+              <p
+                class="results__panel__selectGraph__principalList__item__button__name"
+              >
+                Barras horizontales
+              </p>
+            </button>
+          </li>
+          <li
+            class="results__panel__selectGraph__principalList__item"
+            id="selectGraphs__bars"
+          >
+            <button
+              class="results__panel__selectGraph__principalList__item__button"
+              title="Barras verticales"
+              name="verticales"
+            >
+              <div
+                class="results__panel__selectGraph__principalList__item__button__icon"
+              >
+                <span class="DANE__Geovisor__icon__graph"></span>
+              </div>
+              <p
+                class="results__panel__selectGraph__principalList__item__button__name"
+              >
+                Barras verticales
+              </p>
+            </button>
+          </li>
+
+          <li
+            class="results__panel__selectGraph__principalList__item"
+            id="selectGraphs__value"
+          >
+            <button
+              class="results__panel__selectGraph__principalList__item__button"
+            >
+              <div
+                class="results__panel__selectGraph__principalList__item__button__icon"
+              >
+                <span class="DANE__Geovisor__icon__pencil"></span>
+              </div>
+              <p
+                class="results__panel__selectGraph__principalList__item__button__name"
+              >
+                Valor
+              </p>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="results__panel__graphs"></div>
+    </div>
+    <button
+      class="functionFilter__accordion__btn"
+      id="results_entidad"
+      name="distribución"
+      title="Distribución de las empresas"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__List"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">
+        Participación ente territorial
+      </p>
+    </button>
+    <div class="functionFilter__accordion__panel">
+      <div class="results__panel__participacion"></div>
+    </div>
+    <button
+      class="functionFilter__accordion__btn"
+      id="results_frecuencia"
+      title="Frecuencia"
+      name="Frecuencia"
+    >
+      <div class="functionFilter__accordion__btn__icon">
+        <span class="DANE__Geovisor__icon__List"></span>
+      </div>
+      <p class="functionFilter__accordion__btn__name">Frecuencia</p>
+    </button>
+    <div class="functionFilter__accordion__panel">
+      <div class="results__panel__frequency"></div>
+    </div>
+    <div class="results__panel__source">
+      <p class="results__panel__source__name__link">
+        Fuente:
+        <a
+          href="https://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-informacion/registro-estadistico-de-empresas"
+          target="_blank"
+          class="map__source__link"
+          >Directorio de Empresas</a
+        >
+      </p>
+    </div>
+  </div>
 </div>
